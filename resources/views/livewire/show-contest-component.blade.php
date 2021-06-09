@@ -84,6 +84,8 @@
                                                 @else
                                                     <li><p>ابتدا باید <a href="{{ route('register') }}" style="color:blue;">ثبت نام</a> یا <a href="{{ route('login') }}" style="color:blue;">وارد</a> سایت شوید</p></li>
                                                 @endauth
+
+                                                <li><a href="{{ route('contest.scoreboard',['contest_id' => $contest_id ]) }}" class="btn btn-success">جدول امتیازات</a></li>
                                             @endif
                                        </ul>
                                     </div>

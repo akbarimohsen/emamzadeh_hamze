@@ -39,6 +39,7 @@
                                                 if(distance < 0)
                                                 {
                                                     document.getElementById("time_counter").innerHTML = "Time's up";
+                                                    document.getElementById("end_contest").click();
                                                 }
 
                                             },1000)
@@ -55,14 +56,13 @@
                                         <li>
                                             @livewire("question-box-component" ,['question_id' => $q->id])
                                         </li>
-
                                     @endforeach
                                 </ul>
                             </div>
                             <div class="col-12 d-flex justify-content-center pt-4" class="li: { list-style: none; }">
                                 {{ $questions->links("pagination::bootstrap-4") }}
                               </div>
-                            <a href="#" wire:click ="endContest" style="float: right;" class="btn btn-primary">اتمام آزمون</a>
+                            <a href="#" id="end_contest" wire:click ="endContest" style="float: right;" class="btn btn-primary">اتمام آزمون</a>
                         </div>
 
                     </div>

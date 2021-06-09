@@ -16,6 +16,6 @@ class Contest extends Model
     }
     public function users()
     {
-        $this->belongsToMany(User::class, 'user_contest', 'contest_id' , 'user_id');
+        return $this->belongsToMany(User::class, 'user_contest', 'contest_id' , 'user_id');
     }
 }

@@ -22,6 +22,7 @@ use App\Http\Livewire\OfoghCategoriesComponent;
 use App\Http\Livewire\OfoghComponent;
 use App\Http\Livewire\OfoghContentComponent;
 use App\Http\Livewire\PicturesComponent;
+use App\Http\Livewire\ScoreboardComponent;
 use App\Http\Livewire\ShowContestComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\VideoesComponent;
@@ -49,9 +50,7 @@ Route::get('/events',EventsComponent::class)->name('events');
 Route::get('/videos',VideoesComponent::class)->name('videos');
 Route::get('/contests',ContestsComponent::class)->name('contests');
 Route::get('/contests/{contest_id}', ShowContestComponent::class)->name('showContest');
-
-
-
+Route::get('/contests/{contest_id}/scoreboard',ScoreboardComponent::class)->name('contest.scoreboard');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
@@ -82,6 +81,7 @@ Route::middleware(['auth:sanctum', 'verified' ,'adminAuth'])->group(function(){
     Route::get('/admin/contests/{id}/showQuestions',AdminShowQuestionsComponent::class)->name('admin.showQuestion');
 });
 
+// enter Contest Route
 Route::middleware(['auth:sanctum' , 'verified' , 'LoginContest'])->group(function(){
     Route::get('/contests/{contest_id}/enter',ContestEnterComponent::class)->name('contest.enter');
 });

@@ -40,10 +40,10 @@ class ContestEnterComponent extends Component
 
     public function endContest()
     {
-         Auth::user()->contests()->attach(['contest_id' => $this->contest_id]);
-        $name = Auth::user()->name;
-
+        Auth::user()->contests()->attach(['contest_id' => $this->contest_id]);
+        $user_id = Auth::user()->id;
         session()->flash('contest_message' ,".آزمون با موفقیت به پایان رسید.");
+        session()->forget("user$user_id");
         return redirect()->route('showContest', ['contest_id' => $this->contest_id]);
     }
     public function render()
