@@ -8,11 +8,13 @@ use Livewire\Component;
 class AdminAddCategoryComponent extends Component
 {
     public $name;
+    public $title;
 
     public function submit()
     {
         $data = $this->validate([
-            'name' => 'required|string|max:20'
+            'name' => 'required|string|max:20',
+            'title' => 'required|string'
         ]);
 
         Category::create($data);

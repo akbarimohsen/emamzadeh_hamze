@@ -24,20 +24,20 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12 col-lg-6">
                             <div class="hstry-img text-center">
-                                <img src={{ asset("assets/images/resources/hstry-img.png") }} alt="hstry-img.png">
+                                <img src={{ asset("assets/images/resources/hstry-img1.png") }} alt="hstry-img.png">
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12 col-lg-6">
                             <div class="hstry-desc">
                                 <span>چند کلمه ای درباره ما</span>
-                                <h2>تاریخچه مرکز جامعه</h2>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                                <strong>جامعه <span>اولین</span> مرکز اسلامی در <span>کشور</span> است.</strong>
+                                <h2>تاریخچه امامزاده حمزه (ع)</h2>
+                                <p>امامزاده حمزه (ع) از نوادگان امام صادق (ع)  می باشد که در قرن هشتم هجری می زیسته است .</p>
+                                <strong>امامزاده حمزه (ع) در  بخش های زیر فعالیت می کند.</strong>
                                 <ul>
-                                    <li>تحقیقات اسلامی</li>
+                                    <li>قرائت دعا و قرآن</li>
                                     <li>کمک به اقشار جامعه</li>
-                                    <li>هدایت رویداد های کمک</li>
-                                    <li>تحصیل کودکان</li>
+                                    <li>برگزاری رویداد های مذهبی</li>
+                                    <li>برگزاری مسابقات فرهنگی</li>
                                     <li>کمک به گرسنگان و نیازمندان</li>
                                     <li>اقامه نماز و مراسم اسلامی</li>
                                 </ul>
@@ -45,83 +45,6 @@
                         </div>
                     </div>
                 </div><!-- History Wrap -->
-            </div>
-        </div>
-    </section>
-    <section class = "team-green-block">
-        <div class="gap thm-layer opc95">
-            <div class="fixed-bg ptrn-bg" style="background-image: url({{ asset('assets/images/pattern-bg.jpg') }});"></div>
-            <div class="container">
-                <div class="sec-title2 text-center">
-                    <div class="sec-title-inner2">
-                        <span>مدرسان خبره</span>
-                        <h3>دانشمندان اسلامی</h3>
-                    </div>
-                </div>
-                <div class="team-wrap text-center remove-ext3">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 col-lg-3 fadeIn" data-wow-duration=".8s" data-wow-delay=".2s">
-                            <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-1.jpg") }} alt="team-img2-1.jpg">
-                                <div class="team-info2">
-                                    <h4>زهرا</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
-                                    <div class="team-scl">
-                                        <a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
-                                        <a href="index.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
-                                        <a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a>
-                                        <a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-lg-3 fadeIn" data-wow-duration=".8s" data-wow-delay=".3s">
-                            <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-2.jpg") }} alt="team-img2-2.jpg">
-                                <div class="team-info2">
-                                    <h4>امیر</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
-                                    <div class="team-scl">
-                                        <a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
-                                        <a href="index.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
-                                        <a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a>
-                                        <a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-lg-3 fadeIn" data-wow-duration=".8s" data-wow-delay=".4s">
-                            <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-3.jpg") }} alt="team-img2-3.jpg">
-                                <div class="team-info2">
-                                    <h4>معصومه</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
-                                    <div class="team-scl">
-                                        <a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
-                                        <a href="index.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
-                                        <a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a>
-                                        <a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-lg-3 fadeIn" data-wow-duration=".8s" data-wow-delay=".5s">
-                            <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-4.jpg") }} alt="team-img2-4.jpg">
-                                <div class="team-info2">
-                                    <h4>فاطمه</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
-                                    <div class="team-scl">
-                                        <a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
-                                        <a href="index.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
-                                        <a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a>
-                                        <a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Team Wrap -->
             </div>
         </div>
     </section>
@@ -140,9 +63,9 @@
                             <div class="srv-box2">
                                 <i class="flaticon-quran-rehal"></i>
                                 <div class="srv-info2">
-                                    <h4>آموزش قرآن</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                                    <a href="index.html#" title="">بیشتر بدانید<i class="flaticon-left-arrow"></i></a>
+                                    <h4>آموزش قرآن  و حدیث</h4>
+                                    <p>هر روز برای اطلاع و افزایش آگاهی مردم احادیث و آیات مهم به همراه تفسیر آن در اینجا قرار خواهد گرفت.</p>
+                                    <a href="{{ route('quranAndHadis') }}" title="">بیشتر بدانید<i class="flaticon-left-arrow"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -150,8 +73,8 @@
                             <div class="srv-box2">
                                 <i class="flaticon-heart-1"></i>
                                 <div class="srv-info2">
-                                    <h4>خدمات خیریه و کمک</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                                    <h4>خدمات فرهنگی و خیریه</h4>
+                                    <p>امامزاده حمزه (ع) یکی از نقاط فرهنگی مهم شهرستان زرند می باشد. </p>
                                     <a href="index.html#" title="">بیشتر بدانید<i class="flaticon-left-arrow"></i></a>
                                 </div>
                             </div>
@@ -161,7 +84,7 @@
                                 <i class="flaticon-mosque"></i>
                                 <div class="srv-info2">
                                     <h4>ساخت مساجد</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                                    <p>ما در امامزاده حمزه(ع) با کمک های مردمی شما عزیزان در حال ساخت شبستان این مرکز فرهنگی هستیم.</p>
                                     <a href="index.html#" title="">بیشتر بدانید<i class="flaticon-left-arrow"></i></a>
                                 </div>
                             </div>
@@ -171,7 +94,7 @@
                                 <i class="flaticon-social-care"></i>
                                 <div class="srv-info2">
                                     <h4>کمک به فقرا</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                                    <p></p>
                                     <a href="index.html#" title="">بیشتر بدانید<i class="flaticon-left-arrow"></i></a>
                                 </div>
                             </div>
@@ -235,7 +158,7 @@
             <div class="container">
                 <div class="evnt-pry-wrap">
                     <div class="row">
-                        <div class="col-md-8 col-sm-12 col-lg-8">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
                             <div class="sec-title">
                                 <div class="sec-title-inner">
                                     <h3>رویداد های<span>اخیر</span></h3>
@@ -244,80 +167,31 @@
                             </div>
                             <div class="evnt-wrap remove-ext5">
                                 <div class="row mrg20">
-                                    <div class="col-md-6 col-sm-6 col-lg-6">
-                                        <div class="evnt-box">
-                                            <div class="evnt-thmb">
-                                                <a href="index.html#" title=""><img src={{ asset("assets/images/resources/evnt-img1.jpg") }} alt="evnt-img1.jpg"></a>
-                                            </div>
-                                            <div class="evnt-info">
-                                                <h4>رویداد تدریس اسلامی</h4>
-                                                <ul class="pst-mta">
-                                                    <li class="thm-clr">1398/12/12</li>
-                                                    <li class="thm-clr">12:00 صبح تا 2:00 ظهر</li>
-                                                </ul>
-                                                <p>شهر اصلی - بخش جدید - مسجد تازه ساخت</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-lg-6">
-                                        <div class="evnt-box">
-                                            <div class="evnt-thmb">
-                                                <a href="index.html#" title=""><img src={{ asset("assets/images/resources/evnt-img2.jpg") }} alt="evnt-img2.jpg"></a>
-                                            </div>
-                                            <div class="evnt-info">
-                                                <h4>رویداد علمای اسلامی</h4>
-                                                <ul class="pst-mta">
-                                                    <li class="thm-clr">1398/12/12</li>
-                                                    <li class="thm-clr">12:00 صبح تا 2:00 ظهر</li>
-                                                </ul>
-                                                <p>شهر اصلی - بخش جدید - مسجد تازه ساخت</p>
+                                    @foreach ($events as $event )
+                                        <div class="col-md-4 col-sm-4 col-lg-4">
+                                            <div class="evnt-box">
+                                                <div class="evnt-thmb">
+                                                    <a href="index.html#" title=""><img src={{ asset("assets/images/events/$event->image") }} alt="evnt-img1.jpg"></a>
+                                                </div>
+                                                <div class="evnt-info">
+                                                    <h4>{{ $event->title }}</h4>
+                                                    <ul class="pst-mta">
+                                                        <li class="thm-clr">{{ Hekmatinasser\Verta\Facades\Verta::instance($event->date_event )->format('Y-n-j')}}</li>
+                                                        <li class="thm-clr">{{ Hekmatinasser\Verta\Facades\Verta::instance($event->date_event )->format('H:i')}}</li>
+                                                    </ul>
+                                                    <p>{{ $event->description }}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div><!-- Events Wrap -->
-                        </div>
-                        <div class="col-md-4 col-sm-12 col-lg-4">
-                            <div class="sec-title">
-                                <div class="sec-title-inner">
-                                    <h3>اوقات <span>شرعی</span></h3>
-                                </div>
-                            </div>
-                            <ul class="prayer-times">
-                                <li class="pry-tim-hed"><span>نماز</span><span>شروع</span><span>پایان</span></li>
-                                <li><span class="thm-clr">صبح</span><span>03:58 قبل از ظهر</span><span>04:45 قبل از ظهر</span></li>
-                                <li><span class="thm-clr">طلوع خورشید</span><span>05:31 قبل از ظهر</span><span>05:31 قبل از ظهر</span></li>
-                                <li><span class="thm-clr">ظهر</span><span>12:47 بعد از ظهر</span><span>12:47 بعد از ظهر</span></li>
-                                <li><span class="thm-clr">غروب آفتاب</span><span>05:53 بعد از ظهر</span><span>05:50 بعد از ظهر</span></li>
-                                <li><span class="thm-clr">مغرب</span><span>08:04 بعد از ظهر</span><span>08:04 بعد از ظهر</span></li>
-                                <li><span class="thm-clr">نیمه شب</span><span>09:37 بعد از ظهر</span><span>09:30 بعد از ظهر</span></li>
-                                <li><span class="thm-clr">فضیلت نافله شب</span><span>01:15 بعد از ظهر</span><span>01:15 بعد از ظهر</span></li>
-                            </ul>
                         </div>
                     </div>
                 </div><!-- Events & Prayer Wrap -->
             </div>
         </div>
     </section>
-
-    <section class ="donate-block">
-        <div class="gap black-layer3 opc9">
-            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax6.jpg')}});"></div>
-            <div class="container">
-                <div class="sec-title2 text-center">
-                    <div class="sec-title-inner2">
-                        <span>حمایت از ما</span>
-                        <h3>ما به کمک شما نیاز داریم</h3>
-                    </div>
-                    <p>ما برای دستیافتن به هدف های کوتاه مدت و بلند مدت خود نیازمند کمک های شما هستیم تا مرکز اسلامی پایدار بماند.</p>
-                </div>
-                <div class="view-all text-center">
-                    <a class="thm-btn brd-rd5" href="index.html#" title="">بیشتر بدانید</a>
-                </div><!-- View All -->
-            </div>
-        </div>
-    </section>
-
     <section>
         <div class="gap white-layer opc9">
             <div class="fixed-bg ptrn-bg" style="background-image: url({{ asset('assets/images/pattern-bg.jpg')}});"></div>

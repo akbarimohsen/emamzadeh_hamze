@@ -4,8 +4,72 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9560b121359a8db21e7a169000dd4c92",
+    "content-hash": "ec4fe184be504cbb00ba20fc9d35041d",
     "packages": [
+        {
+            "name": "anhskohbo/no-captcha",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anhskohbo/no-captcha.git",
+                "reference": "f654a4093bd2e9ddbdfad3297bb7aa142a55e611"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anhskohbo/no-captcha/zipball/f654a4093bd2e9ddbdfad3297bb7aa142a55e611",
+                "reference": "f654a4093bd2e9ddbdfad3297bb7aa142a55e611",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2|^7.0",
+                "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+                "php": ">=5.5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider"
+                    ],
+                    "aliases": {
+                        "NoCaptcha": "Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Anhskohbo\\NoCaptcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "anhskohbo",
+                    "email": "anhskohbo@gmail.com"
+                }
+            ],
+            "description": "No CAPTCHA reCAPTCHA For Laravel.",
+            "keywords": [
+                "captcha",
+                "laravel",
+                "laravel4",
+                "laravel5",
+                "laravel6",
+                "no-captcha",
+                "recaptcha"
+            ],
+            "support": {
+                "issues": "https://github.com/anhskohbo/no-captcha/issues",
+                "source": "https://github.com/anhskohbo/no-captcha/tree/3.3.0"
+            },
+            "time": "2020-09-10T02:31:52+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.3",
@@ -2194,6 +2258,72 @@
                 }
             ],
             "time": "2020-12-14T13:15:25+00:00"
+        },
+        {
+            "name": "mostafaznv/recaptcha",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mostafaznv/recaptcha.git",
+                "reference": "51fc6043f58d117383e2853b4338684db28e5f6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mostafaznv/recaptcha/zipball/51fc6043f58d117383e2853b4338684db28e5f6f",
+                "reference": "51fc6043f58d117383e2853b4338684db28e5f6f",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "6.* || 7.*",
+                "laravel/framework": "5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || 6.* || 7.* || 8.*",
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mostafaznv\\Recaptcha\\RecaptchaServiceProvider"
+                    ],
+                    "aliases": {
+                        "Recaptcha": "Mostafaznv\\Recaptcha\\Facades\\Recaptcha"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mostafaznv\\Recaptcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mostafaznv",
+                    "email": "mostafa.zeinivand@gmail.com"
+                }
+            ],
+            "description": "Laravel package for Google Recaptcha v3",
+            "keywords": [
+                "Google ReCaptcha",
+                "laravel",
+                "laravel 5",
+                "laravel 6",
+                "laravel 7",
+                "laravel 8",
+                "mostafaznv",
+                "no captcha",
+                "packalyst",
+                "recaptcha",
+                "recaptcha v3"
+            ],
+            "support": {
+                "docs": "https://github.com/mostafaznv/recaptcha/blob/master/README.md",
+                "issues": "https://github.com/mostafaznv/recaptcha/issues",
+                "source": "https://github.com/mostafaznv/recaptcha"
+            },
+            "time": "2021-02-25T16:12:05+00:00"
         },
         {
             "name": "nesbot/carbon",

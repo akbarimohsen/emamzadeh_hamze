@@ -74,6 +74,7 @@
                                                 <li><div class="alert alert-primary">مسابقه هنوز آغاز نشده است.</div></li>
                                             @elseif($now->greaterThan($end))
                                                 <li><div class="alert alert-primary">مسابقه به پایان رسیده است.</div></li>
+                                                <li><a href="{{ route('contest.scoreboard',['contest_id' => $contest_id ]) }}" class="btn btn-success">جدول امتیازات</a></li>
                                             @else
                                                 @auth
                                                     <li>

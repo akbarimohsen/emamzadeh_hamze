@@ -6,6 +6,7 @@ use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddContentComponent;
 use App\Http\Livewire\Admin\AdminAddContestComponent;
 use App\Http\Livewire\Admin\AdminAddEventComponent;
+use App\Http\Livewire\Admin\AdminAddHekmatComponent;
 use App\Http\Livewire\Admin\AdminAddQuestionComponent;
 use App\Http\Livewire\Admin\AdminAddVideoComponent;
 use App\Http\Livewire\Admin\AdminCommentsComponent;
@@ -22,6 +23,7 @@ use App\Http\Livewire\OfoghCategoriesComponent;
 use App\Http\Livewire\OfoghComponent;
 use App\Http\Livewire\OfoghContentComponent;
 use App\Http\Livewire\PicturesComponent;
+use App\Http\Livewire\QuranAndHadisComponent;
 use App\Http\Livewire\ScoreboardComponent;
 use App\Http\Livewire\ShowContestComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
@@ -51,7 +53,7 @@ Route::get('/videos',VideoesComponent::class)->name('videos');
 Route::get('/contests',ContestsComponent::class)->name('contests');
 Route::get('/contests/{contest_id}', ShowContestComponent::class)->name('showContest');
 Route::get('/contests/{contest_id}/scoreboard',ScoreboardComponent::class)->name('contest.scoreboard');
-
+Route::get('/quranAndHadis',QuranAndHadisComponent::class)->name('quranAndHadis');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
@@ -73,6 +75,7 @@ Route::middleware(['auth:sanctum', 'verified' ,'adminAuth'])->group(function(){
     Route::get('/admin/addCategory',AdminAddCategoryComponent::class)->name('admin.addCategory');
     Route::get('/admin/addEvent',AdminAddEventComponent::class)->name('admin.addEvent');
     Route::get('/admin/addVideo',AdminAddVideoComponent::class)->name('admin.addVideo');
+    Route::get('/admin/AddHekmat', AdminAddHekmatComponent::class)->name('admin.addHekmat');
     Route::get('/admin/comments',AdminCommentsComponent::class)->name('admin.comments');
     Route::get('/admin/messages',AdminMessagesComponent::class)->name('admin.messages');
     Route::get('/admin/addContest', AdminAddContestComponent::class)->name("admin.addContest");

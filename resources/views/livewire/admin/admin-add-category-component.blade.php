@@ -32,6 +32,20 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>موضوع دسته</label>
+                                    <select class="form-control" id="titleSelect" wire:model="title">
+                                        <option value="hekmat" selected>حکمت</option>
+                                        <option value="content">مطلب</option>
+                                    </select>
+                                </div>
+                                @error('title')
+                                    <span class="alert alert-danger" >{{$message}}</span>
+                                @enderror
+                            </div>
+                        </div>
                         <!-- /row-->
                     </div>
                     <!-- /box_general-->

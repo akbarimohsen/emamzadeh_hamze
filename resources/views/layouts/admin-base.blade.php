@@ -103,6 +103,9 @@
               <li>
                   <a href="{{ route('admin.addVideo') }}">ویدیو جدید</a>
               </li>
+              <li>
+                  <a href="{{ route('admin.addHekmat') }}">حکمت جدید</a>
+              </li>
             </ul>
           </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
