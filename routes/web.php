@@ -14,10 +14,12 @@ use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminMessagesComponent;
 use App\Http\Livewire\Admin\AdminShowContestsComponent;
 use App\Http\Livewire\Admin\AdminShowQuestionsComponent;
+use App\Http\Livewire\ConstructionNaveComponent;
 use App\Http\Livewire\ContactUsComponent;
 use App\Http\Livewire\ContestEnterComponent;
 use App\Http\Livewire\ContestsComponent;
 use App\Http\Livewire\EventsComponent;
+use App\Http\Livewire\FahangServicesComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\OfoghCategoriesComponent;
 use App\Http\Livewire\OfoghComponent;
@@ -54,6 +56,10 @@ Route::get('/contests',ContestsComponent::class)->name('contests');
 Route::get('/contests/{contest_id}', ShowContestComponent::class)->name('showContest');
 Route::get('/contests/{contest_id}/scoreboard',ScoreboardComponent::class)->name('contest.scoreboard');
 Route::get('/quranAndHadis',QuranAndHadisComponent::class)->name('quranAndHadis');
+Route::get('/FarhangServices', FahangServicesComponent::class)->name('farhangServices');
+Route::get('/ConstructionNave', ConstructionNaveComponent::class)->name('constructionNave');
+
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
