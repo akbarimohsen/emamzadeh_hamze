@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="blog-detail-wrp">
                     <div class="row">
-                                                <div class="col-md-3 col-sm-6 col-lg-3">
+                        <div class="col-md-3 col-sm-6 col-lg-3">
                             <div class="sidebar-wrp">
                                 {{-- <div class="wdgt-box">
                                     <h4>جستجو</h4>
@@ -66,7 +66,7 @@
                                 <div class="blog-detail-inf brd-rd5">
                                     <img src={{ asset("assets/images/contests/$contest->image") }} alt="blog-detail-img.jpg">
                                     <div class="blog-detail-inf-inr">
-                                        <h4>{{ $contest->title }}</h4>
+                                        <h4>نام مسابقه : {{ $contest->title }}</h4>
                                         <ul class="pst-mta">
                                             <li><i class="fa fa-calendar-o thm-clr"></i>{{ Hekmatinasser\Verta\Facades\Verta::instance($contest->start )->format('Y-n-j')}}</li>
                                             <li><i class="fa fa-clock-o thm-clr"></i>{{ Hekmatinasser\Verta\Facades\Verta::instance($contest->start )->format('H:i')}}</li>
@@ -114,9 +114,8 @@
                                     </div>
                                 </div>
                                 <div class="blog-detail-desc">
-                                    <p>{{ $contest->short_description }}</p>
-                                    <blockquote class="brd-rd5"><p><i class="fa fa-quote-left thm-clr perf"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p></blockquote>
-                                    <p>{{ $contest->description }}</p>
+                                    <h5 class="mt-3">{{ $contest->short_description }}</h5>
+                                    <blockquote class="brd-rd5"><p>{{ $contest->description }}</p></blockquote>
                                     <div class="pst-shr-tgs">
                                         <div class="team-scl float-left">
                                             <span>اشتراک مطلب: </span>

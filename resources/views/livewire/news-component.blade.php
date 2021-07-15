@@ -23,18 +23,19 @@
                         <div class="col-md-12 col-sm-12 col-lg-12">
                             <div class="blog-detail">
                                 <div class="blog-detail-inf brd-rd5">
-                                <img src={{ asset("assets/images/nave.jpg") }} alt="blog-detail-img.jpg">
+                                <img src={{ asset("assets/images/News/$news->image") }} alt="blog-detail-img.jpg">
                                 <div class="blog-detail-inf-inr">
-                                    <h4>ساخت شبستان امامزاده حمزه (ع)</h4>
+                                    <h4>{{ $news->title }}</h4>
+                                    <ul class="pst-mta">
+                                        <li><i class="fa fa-calendar-o thm-clr"></i></li>
+                                        <li><i class="fa fa-user-o thm-clr"></i></li>
+                                        <li><i class="fa fa-clock-o thm-clr"></i></li>
+                                    </ul>
                                 </div>
                                 </div>
                                 <div class="blog-detail-desc">
-                                    <p>ما خادمین امامزاده حمزه (ع) و با کمک های مردمی شما عزیزان در حال تلاش هستیم که شبستان این امامزاده عظیم الشان را به زودی تکمیل کنیم.</p>
-                                    <p>شما هم می توانید در این امر خیر عظیم شرکت کنید
-                                        <br>
-                                        <b>شماره کارت امامزاده حمزه(ع)</b>
-                                        <br>
-                                        6037 9978 7095 4832
+                                    <p>
+                                        {{ $news->description }}
                                     </p>
                                     <div class="pst-shr-tgs">
                                         <div class="team-scl float-left">
@@ -55,4 +56,5 @@
         </div>
     </section>
 </div>
+
 

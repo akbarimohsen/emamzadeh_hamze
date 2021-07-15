@@ -106,6 +106,12 @@
               <li>
                   <a href="{{ route('admin.addHekmat') }}">حکمت جدید</a>
               </li>
+              <li>
+                <a href="{{ route('admin.addNews') }}">خبر جدید</a>
+              </li>
+              <li>
+                <a href="{{ route('admin.addBook') }}">کتاب جدید</a>
+              </li>
             </ul>
           </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">

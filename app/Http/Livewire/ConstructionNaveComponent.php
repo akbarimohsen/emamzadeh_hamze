@@ -8,6 +8,6 @@ class ConstructionNaveComponent extends Component
 {
     public function render()
     {
-        return view('livewire.construction-nave-component')->layout('layouts.admin-base');
+        return view('livewire.construction-nave-component')->layout('layouts.base');
     }
 }

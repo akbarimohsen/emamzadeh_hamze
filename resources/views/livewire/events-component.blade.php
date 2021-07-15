@@ -4,7 +4,7 @@
             <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax12.jpg') }});"></div>
             <div class="container">
                 <div class="page-title-wrap">
-                    <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1>
+                    {{-- <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1> --}}
                     <h2>رویداد ها</h2>
                     <ul class="breadcrumbs">
                         <li><a href="index.html" title="">صفحه اصلی</a></li>

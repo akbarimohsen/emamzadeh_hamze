@@ -4,7 +4,7 @@
             <div class="fixed-bg" style="background-image: url{{ asset('assets/images/parallax13.jpg') }});"></div>
             <div class="container">
                 <div class="page-title-wrap">
-                    <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1>
+                    <h1 style="color:white;">مرکز افق </h1>
                     <h2>مطالب وبلاگ</h2>
                     <ul class="breadcrumbs">
                         <li><a href="index.html" title="">صفحه اصلی</a></li>

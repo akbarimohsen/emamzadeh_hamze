@@ -8,7 +8,7 @@
                 <table>
                     <tr>
                         <td>
-                            <input  type="radio" @if($submited==0) wire:model.lazy="answer" @else disabled=true @endif value="1" @if($submited == 1) checked @endif   >
+                            <input  type="radio"   value="1" @if($submited == 1) checked @endif wire:model.lazy="answer"  >
                         </td>
                         <td style="float: right;">
                             <p><b>{{$question->answer1}}</b></p>
@@ -16,7 +16,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input  type="radio" @if($submited==0) wire:model.lazy="answer" @else disabled=true @endif value="2" @if($submited == 2) checked @endif  >
+                            <input  type="radio"    value="2" @if($submited == 2) checked @endif wire:model.lazy="answer"  >
                         </td>
                         <td style="float: right;">
                             <p><b>{{$question->answer2}}</b></p>
@@ -24,15 +24,15 @@
                     </tr>
                     <tr>
                         <td>
-                            <input  type="radio" @if($submited==0) wire:model.lazy="answer" @else disabled=true @endif value="3" @if($submited == 3) checked @endif  >
+                            <input  type="radio"    value="3" @if($submited == 3) checked @endif wire:model.lazy="answer"  >
                         </td>
                         <td style="float: right;">
-                            <p><b>{{$question->answer3}}</b></p>
+                            <p><b>{{ $question->answer3 }}</b></p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input  type="radio" @if($submited==0) wire:model.lazy="answer" @else disabled=true @endif value="4" @if($submited == 4) checked @endif  >
+                            <input  type="radio"    value="4" @if($submited == 4) checked @endif wire:model.lazy="answer"  >
                         </td>
                         <td style="float: right;">
                             <p><b>{{$question->answer4}}</b></p>
@@ -41,9 +41,9 @@
                 </table>
                 <br>
                 @if($submited == 0)
-                    <button type="submit" class="btn btn-success" style="float: right;" @if($submited != 0) @endif>ثبت پاسخ</button>
+                    <button type="submit" class="btn btn-danger" style="float: right;" disabled=true >هنوز پاسخی ثبت نشده است</button>
                 @else
-                    <button type="submit" class="btn btn-primary" style="float: right;" @if($submited != 0) disabled=true @endif>پاسخ شما ثبت گردید.</button>
+                    <button type="submit" class="btn btn-primary" style="float: right;" disabled=true > پاسخ انتخابی شما : {{ $submited }}</button>
                 @endif
             </form>
 

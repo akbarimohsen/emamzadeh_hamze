@@ -4,11 +4,11 @@
             <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax12.jpg') }});"></div>
             <div class="container">
                 <div class="page-title-wrap">
-                    <h1 style="color: white;">مسابقات فرهنگی </h1>
-                    <h2>مسابقات</h2>
+                    {{-- <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1> --}}
+                    <h2>کتاب ها</h2>
                     <ul class="breadcrumbs">
                         <li><a href="index.html" title="">صفحه اصلی</a></li>
-                        <li>مسابقات</li>
+                        <li>کتاب ها </li>
                     </ul>
                 </div><!-- Page Title Wrap -->
             </div>
@@ -23,21 +23,16 @@
                             <div class="remove-ext3">
                                 <div class="row">
 
-                                    @foreach ($contests as $contest )
+                                    @foreach ($books as $book )
                                         <div class="col-md-4 col-sm-6 col-lg-4">
                                             <div class="event-box2">
                                                 <div class="event-thumb">
-                                                    <a href="event.html#" title=""><img src={{ asset("assets/images/contests/$contest->image") }} alt="event-img2-1.jpg"></a>
-                                                </div>
+                                                    <a href="#" title=""><img src={{ asset("assets/images/Books/$book->image") }} alt="event-img2-1.jpg"></a>
                                                 <div class="event-info">
-                                                    <h4><a href="event.html#" title="">{{ $contest->title }}</a></h4>
-                                                    <p>{{ $contest->short_description }}</p>
-                                                    <ul class="event-mta">
-                                                        <li><i class="fa fa-map-marker"></i>شهرستان زرند - آستان مقدس امامزاده حمزه</li>
-                                                        <li><i class="flaticon-clock"></i>زمان شروع : {{ Hekmatinasser\Verta\Facades\Verta::instance($contest->start )->format('Y-n-j H:i')}}</li>
-                                                        <li><i class="flaticon-clock"></i>زمان پایان : {{ Hekmatinasser\Verta\Facades\Verta::instance($contest->end )->format('Y-n-j H:i')}}</li>
-                                                        <li><a href="{{ route('showContest' , ['contest_id' => $contest->id]) }}" class="btn btn-primary">ورود به مسابقه</a></li>
-                                                    </ul>
+                                                    <h4><a href="event.html#" title=""> نام کتاب : {{ $book->name }}</a></h4>
+                                                    <h5 class="mt-1">نویسنده : {{ $book->title }}</h5>
+                                                    <p>توضیحات : {{ $book->title }}</p>
+                                                    <button type="button" class="btn btn-primary mt-3" wire:click="download({{$book->id}})">دانلود</button>
                                                 </div>
                                             </div>
                                         </div>

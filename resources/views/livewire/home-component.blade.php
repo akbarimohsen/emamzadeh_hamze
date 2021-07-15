@@ -1,51 +1,46 @@
 <div>
-    <section class ="owl-curve-green">
-        <div class="gap no-gap">
-            <img class="botm-shp shp-img" src={{ asset("assets/images/shp2-1.png") }} alt="shp2-1.png">
-            <div class="featured-area-wrap text-center">
-                <a class="contact-btn" href="index.html#" title=""><i class="flaticon-comment"></i>تماس با ما</a>
-                <div class="featured-area2 owl-carousel">
-                    <div class="featured-item style2" style="background-image: url({{ asset('assets/images/resources/emamzadeh.png') }});">
-                        <div class="featured-cap">
-                            {{-- <h1 style="padding-bottom:50px;">آستان مقدس امامزاده حمزه (ع)</h1>
-                            <a class="thm-btn brd-rd5 mt-5" href="index.html#" title="">بیشتر بخوانید<i class="flaticon-left-arrow"></i></a> --}}
-
-                        </div>
+    <section>
+        <div class="container mt-1">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src={{ asset('assets/images/resources/emamzadeh.png')  }} alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src={{ asset('assets/images/resources/slider.jpg')  }} alt="First slide">
                     </div>
                 </div>
-            </div><!-- Featured Area Wrap -->
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
     </section>
 
     <section>
-        <div class="gap">
-            <div class="container">
-                <div class="hstry-wrap">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 col-lg-6">
-                            <div class="hstry-img text-center">
-                                <img src={{ asset("assets/images/resources/hstry-img1.png") }} alt="hstry-img.png">
-                            </div>
+        <div class="container mt-5">
+                <div>
+                    <h2 style="text-align: center; padding-bottom:10px;" >
+                        آخرین اخبار
+                    </h2>
+                </div>
+
+                <div class="card-deck">
+                    @foreach ($news as $n)
+                        <div class="card">
+                        <img src={{ asset("assets/images/News/home/$n->image")  }} class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $n->title }}</h5>
+                            <p class="card-text"><a href="{{ route("news", ['id' => $n->id]) }}" class="btn btn-primary">بیشتر بخوانید</a></p>
                         </div>
-                        <div class="col-md-6 col-sm-12 col-lg-6">
-                            <div class="hstry-desc">
-                                <span>چند کلمه ای درباره ما</span>
-                                <h2>تاریخچه امامزاده حمزه (ع)</h2>
-                                <p style="line-height: 2;">امامزاده حمزه (ع) از نوادگان امام صادق (ع)  می باشد که در قرن ششم هجری می زیسته است. وی سیدی بسیار جلیل قدر و صاحب کرامت می باشد او سومین فرزند پدرش است که به زهد و تقوا آراسته بود و تمام خصال پسندیده پدر را به ارث برده است نام وی را علامه نسابه سید ضامن بم شدقم ذکر نموده و محرابی کرمانی نیز او را به عنوان امامزاده صبران یاد می کند که در محله قبرستان متروک زرندیه مدفون است.آرامگاه پدر بزرگوار وی در شهداد می باشد که شاه نعمت الله ولی با پای پیاده به زیارت آن مشرف می شده است. امامزاده حمزه از بزرگان سادات کرمان بود پس از وفات پدر به خواهش اهالی زرند به این شهر مهاجرت می کند که در حمله غزان سلجوقی در ربع آخر قرن ششم هجری به شهادت می رشد وی بالغ بر هفتاد سال داشته است. .</p>
-                                <strong>ما خادمین امامزاده حمزه (ع) در بخش های زیر فعالیت می کنیم .</strong>
-                                <ul>
-                                    <li>قرائت دعا و قرآن</li>
-                                    <li>کمک به اقشار جامعه</li>
-                                    <li>برگزاری رویداد های مذهبی</li>
-                                    <li>برگزاری مسابقات فرهنگی</li>
-                                    <li>کمک به فقیران و نیازمندان</li>
-                                    <li>اقامه نماز و مراسم اسلامی</li>
-                                </ul>
-                            </div>
                         </div>
-                    </div>
-                </div><!-- History Wrap -->
-            </div>
+                    @endforeach
+                </div>
         </div>
     </section>
     <section>
@@ -85,7 +80,7 @@
                                 <div class="srv-info2">
                                     <h4>ساخت شبستان</h4>
                                     <p>ما در امامزاده حمزه(ع) با کمک های مردمی شما عزیزان در حال ساخت شبستان این آستان مقدس  هستیم..</p>
-                                    <a href="index.html#" title="">بیشتر بدانید<i class="flaticon-left-arrow"></i></a>
+                                    <a href="{{ route('constructionNave') }}" title="">بیشتر بدانید<i class="flaticon-left-arrow"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +90,6 @@
                                 <div class="srv-info2">
                                     <h4>کمک به فقرا</h4>
                                     <p>یکی از کارهای مهمی که با کمک های شما عزیزان ما در این مرکز فرهنگی انحام می دهیم, کمک به مستضعفین حفظ حقوق آن ها می باشد.</p>
-                                    <a href="index.html#" title="">بیشتر بدانید<i class="flaticon-left-arrow"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -158,9 +152,8 @@
                         <div class="col-md-12 col-sm-12 col-lg-12">
                             <div class="sec-title">
                                 <div class="sec-title-inner">
-                                    <h3>رویداد های<span>اخیر</span></h3>
+                                    <h3>رویداد های اخیر</h3>
                                 </div>
-                                <p>مرکز اسلامی جامعه رویداد های مختلفی در طول سال برگزار میکند.</p>
                             </div>
                             <div class="evnt-wrap remove-ext5">
                                 <div class="row mrg20">

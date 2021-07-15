@@ -4,11 +4,11 @@
             <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax12.jpg') }});"></div>
             <div class="container">
                 <div class="page-title-wrap">
-                    <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1>
-                    <h2>نمونه کار ها</h2>
+                    <h1 style="color:white;">فیلم ها </h1>
+                    <h2>فیلم ها</h2>
                     <ul class="breadcrumbs">
                         <li><a href="index.html" title="">صفحه اصلی</a></li>
-                        <li>نمونه کار ها</li>
+                        <li>فیلم ها </li>
                     </ul>
                 </div><!-- Page Title Wrap -->
             </div>
@@ -18,13 +18,7 @@
         <div class="gap">
             <div class="container">
                 <div class="prtfl-wrap text-center">
-                    <ul class="fltr-lnks">
-                        <li class="active"><a data-filter="*" href="portfolio.html#">همه</a></li>
-                        <li><a data-filter=".fltr-itm1" href="portfolio.html#">تدریس اسلامی</a></li>
-                        <li><a data-filter=".fltr-itm2" href="portfolio.html#">کتاب ها</a></li>
-                        <li><a data-filter=".fltr-itm3" href="portfolio.html#">کتاب های صوتی</a></li>
-                        <li><a data-filter=".fltr-itm4" href="portfolio.html#">ویدیو ها</a></li>
-                    </ul>
+
                     <div class="prtfl-dta remove-ext1">
                         <div class="row mrg15 masonry">
                             @foreach ($videos as $video)

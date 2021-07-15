@@ -25,6 +25,9 @@
             left: 10px;
             top:10px;
         }
+        .checked{
+
+        }
     </style>
     <!-- Color Scheme -->
     <link rel="stylesheet" href={{ asset("assets/css/colors/color3.css") }} /><!-- Color -->
@@ -73,7 +76,9 @@
 
                             <li><a href="{{ route('events') }}" title="">رویداد ها</a></li>
                             <li><a href="{{ route('contests') }}" title="">مسابقات </a></li>
-                            <li class="menu-item-has-children"><a href="index.html#" title="">گالری</a>
+                            <li><a href="{{ route('books') }}" title="">کتاب ها </a></li>
+
+                            <li class="menu-item-has-children"><a href="#">گالری</a>
 								<ul>
 									<li><a href="{{ route('pictures') }}" title="">عکس ها</a></li>
 									<li><a href="{{ route('videos') }}" title="">ویدیو ها</a></li>
@@ -81,18 +86,6 @@
 							</li>
                             <li><a href="{{ route('about-us') }}" title="">درباره ما</a></li>
                             <li><a href="{{ route('contact-us') }}" title="">تماس با ما</a></li>
-							{{-- <li class="menu-item-has-children"><a href="index.html#" title="">منو</a>
-                                <ul>
-                                    <li><a href="index.html" title="">منو اصلی 1</a></li>
-                                    <li><a href="index2.html" title="">منوی اصلی 2</a></li>
-                                    <li class="menu-item-has-children"><a href="index.html#" title="">منوی اصلی 3</a>
-                                        <ul>
-                                            <li><a href="index.html" title="">زیرمنوی 1</a></li>
-                                            <li><a href="index2.html" title="">زیر منوی 2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li> --}}
                         </ul>
                     </div>
                 </nav>
@@ -166,13 +159,13 @@
                         </ul>
             </div><!-- Responsive Menu -->
         </div><!-- Responsive Header -->
-        <div class="header-search">
-            <span class="srch-cls-btn brd-rd5"><i class="fa fa-times"></i></span>
-            <form>
-                <input type="text" placeholder="جستجو کنید ...">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div><!-- Header Search -->
+            <div class="header-search">
+                <span class="srch-cls-btn brd-rd5"><i class="fa fa-times"></i></span>
+                <form>
+                    <input type="text" placeholder="جستجو کنید ...">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div><!-- Header Search -->
         <div class="contact-form-model-wrap text-center">
             <span class="model-close"><i class="fa fa-times"></i></span>
             <div class="contact-form-inner">
