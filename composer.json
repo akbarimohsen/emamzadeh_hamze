@@ -17,7 +17,8 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.4",
-        "mostafaznv/recaptcha": "^1.1"
+        "mostafaznv/recaptcha": "^1.1",
+        "te7a-houdini/laravel-trix": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

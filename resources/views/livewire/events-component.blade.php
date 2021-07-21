@@ -30,11 +30,16 @@
                                                     <a href="event.html#" title=""><img src={{ asset("assets/images/events/$event->image") }} alt="event-img2-1.jpg"></a>
                                                 <div class="event-info">
                                                     <h4><a href="event.html#" title="">{{ $event->title }}</a></h4>
-                                                    <p>{{ $event->description }}</p>
+                                                    <p>{!! $event->description !!}</p>
                                                     <ul class="event-mta">
                                                         <li><i class="fa fa-map-marker"></i>شهرستان زرند - آستان مقدس امامزاده حمزه</li>
                                                         <li><i class="flaticon-clock"></i>{{ Hekmatinasser\Verta\Facades\Verta::instance($event->date_event )->format('Y-n-j H:i')}}</li>
                                                     </ul>
+                                                    @auth
+                                                        @can('delete', $event)
+                                                            <a href="#" class="btn btn-danger" wire:click="delete({{$event->id}})" >حذف</a>
+                                                        @endcan
+                                                    @endauth
                                                 </div>
                                             </div>
                                         </div>
@@ -57,6 +62,7 @@
                         <span>تابلوی ای از </span>
                         <h3>آخرین کار های ما</h3>
                     </div>
+
                 </div>
                 <div class="bord-wrap">
                     <div class="row mrg">

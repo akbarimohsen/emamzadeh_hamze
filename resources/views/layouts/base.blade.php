@@ -105,45 +105,42 @@
                 </form>
             </div>
             <div class="lg-mn">
-                <div class="logo"><a href="index.html" title="Logo"> <img src={{ asset("assets/images/logo2.png") }} alt="logo2.png"> </a> </div>
-                <div class="rspn-cnt">
-                    <span><i class="fa fa-envelope thm-clr"></i><a href="index.html#" title=""> info@mail.com </a></span>
-                    <span><i class="fa fa-phone thm-clr"></i> 123-456-789 </span>
-                </div>
+                <div class="logo"><a href="#" title="Logo"> <img src={{ asset("assets/images/logo2.png") }} alt="logo2.png"> </a> </div>
+
                 <span class="rspn-mnu-btn"> <i class="fa fa-list-ul"></i> </span>
             </div>
             <div class="rsnp-mnu">
                 <span class="rspn-mnu-cls"> <i class="fa fa-times"></i> </span>
                 <span id="login-buttons">
-                    <a href="{{ route('login') }}" class="btn btn-success">ورود</a>
-                    <a href="{{ route('register') }}" class="btn btn-primary" style="background-color:#00BCEF;">ثبت نام</a>
+                    @if (Route::has('login'))
+                    @auth
+                        @if(Auth::user()->utype === 'ADM')
+                            <a class="btn btn-success" href="{{ route('admin.dashboard') }}" title="">{{ Auth::user()->name }}</a>
+                            <a class="btn btn-danger" style="background-color:tomato; margin-left:5px;" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="">خروج</a>
+                        @elseif(Auth::user()->utype === 'USR')
+                            <a class="btn btn-success" href="{{ route('user.dashboard') }}" title="">{{ Auth::user()->name }}</a>
+                            <a class="btn btn-danger" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="">خروج</a>
+                        @endif
+                    @else
+                        <a class="btn btn-success" href="{{ route('login') }}" title="">ورود</a>
+                        <a class="btn btn-primary" style="background-color:#00BCEF; margin-left:5px;" href="{{ route('register') }}" title="">ثبت نام</a>
+                    @endif
+                @endif
+                    {{-- <a href="{{ route('login') }}" class="btn btn-success">ورود</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary" style="background-color:#00BCEF;">ثبت نام</a> --}}
                 </span>
                 <ul>
-                            <li class="menu-item-has-children"><a href="index.html#" title="">صفحه اصلی</a>
-                                <ul>
-                                    <li><a href="index.html" title="">صفحه اصلی 1</a></li>
-                                    <li><a href="index2.html" title="">صفحه اصلی 2</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{ route('home') }}">صفحه ی اصلی</a></li>
+                            <li><a href="{{ route('ofogh') }}">مرکز افق</a></li>
+                            <li><a href="{{ route('events') }}" title="">رویداد ها</a></li>
+                            <li><a href="{{ route('contests') }}" title="">مسابقات </a></li>
+                            <li><a href="{{ route('books') }}">کتاب ها</a></li>
 
-                            <li class="menu-item-has-children"><a href="index.html#" title="">بلاگ</a>
-                                <ul>
-                                    <li><a href="blog.html" title="">صفحه اصلی</a></li>
-                                    <li><a href="blog-detail.html" title="">صفحه مطلب</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="event.html" title="">رویداد ها</a></li>
-                            <li><a href="crowd-funding.html" title="">کمک مالی </a></li>
-                            <li class="menu-item-has-children"><a href="index.html#" title="">صفحات</a>
-								<ul>
-									<li><a href="team.html" title="">صفحه تیم 1</a></li>
-									<li><a href="team2.html" title="">صفحه تیم 2</a></li>
-									<li><a href="portfolio.html" title="">نمونه کار ها</a></li>
-									<li><a href="services.html" title="">خدمات ما</a></li>
-								</ul>
-							</li>
-                            <li><a href="about.html" title="">درباره ما</a></li>
-                            <li><a href="contact.html" title="">تماس با ما</a></li>
+                            <li><a href="{{ route('pictures') }}" title="">عکس ها </a></li>
+                            <li><a href="{{ route('videos') }}" title="">ویدیوها</a></li>
+
+                            <li><a href="{{ route('about-us') }}" title="">درباره ما</a></li>
+                            <li><a href="{{ route('contact-us') }}" title="">تماس با ما</a></li>
 							 {{-- <li class="menu-item-has-children"><a href="index.html#" title="">منو</a>
                                 <ul>
                                     <li><a href="index.html" title="">منو اصلی 1</a></li>

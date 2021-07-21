@@ -34,7 +34,7 @@ class AdminAddNewComponent extends Component
         $img1 = Image::make($this->image->path());
         $img2 = Image::make($this->image->path());
 
-        $img1->resize(600 , 350 , function($constraint) {
+        $img1->resize(500 , 270 , function($constraint) {
             $constraint->aspectRatio();
         })->save($dest_path1 . '/' . $img_name);
 

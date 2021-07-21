@@ -1,15 +1,15 @@
 <div>
     <section>
         <div class="gap remove-bottom black-layer2 opc85">
-            <div class="fixed-bg" style="background-image: url(assets/images/parallax13.jpg);"></div>
+            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax2.png') }});"></div>
             <div class="container">
                 <div class="page-title-wrap">
-                    <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1>
-                    <h2>عنوان پست</h2>
+                    <h1></h1>
+                    <h2>خبر</h2>
                     <ul class="breadcrumbs">
-                        <li><a href="index.html" title="">صفحه اصلی</a></li>
-                        <li><a href="blog.html" title="">بلاگ</a></li>
-                        <li>عنوان پست</li>
+                        <li><a href="{{ route('home') }}" title="">صفحه اصلی</a></li>
+                        <li><a href="{{ route('news',['id' => $news->id]) }}" title="">خبر</a></li>
+                        <li>{{ $news->title }}</li>
                     </ul>
                 </div><!-- Page Title Wrap -->
             </div>
@@ -23,19 +23,14 @@
                         <div class="col-md-12 col-sm-12 col-lg-12">
                             <div class="blog-detail">
                                 <div class="blog-detail-inf brd-rd5">
-                                <img src={{ asset("assets/images/News/$news->image") }} alt="blog-detail-img.jpg">
+                                <img src={{ asset("assets/images/News/$news->image")}} alt="blog-detail-img.jpg">
                                 <div class="blog-detail-inf-inr">
                                     <h4>{{ $news->title }}</h4>
-                                    <ul class="pst-mta">
-                                        <li><i class="fa fa-calendar-o thm-clr"></i></li>
-                                        <li><i class="fa fa-user-o thm-clr"></i></li>
-                                        <li><i class="fa fa-clock-o thm-clr"></i></li>
-                                    </ul>
                                 </div>
                                 </div>
                                 <div class="blog-detail-desc">
                                     <p>
-                                        {{ $news->description }}
+                                        {!! $news->description !!}
                                     </p>
                                     <div class="pst-shr-tgs">
                                         <div class="team-scl float-left">

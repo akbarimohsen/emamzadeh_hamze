@@ -29,8 +29,10 @@ class OfoghContentComponent extends Component
             'email' => 'required|email',
             'description' => 'required|string',
         ]);
-        $data['content_id'] = $this->c_id;
-        Comment::create($data);
+        $comment = Comment::create($data);
+
+        $comment->contents()->attach($this->c_id);
+
 
         session()->flash('message','نظر شما با موفقیت ثبت شد. به زودی پس از چک کردن آن توسط مدیران سایت نظر شما در اینجا قرار خواهد گرفت');
     }

@@ -7,10 +7,27 @@ use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Hekmatinasser\Verta\Facades\Verta;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class EventsComponent extends Component
 {
     use WithPagination;
+    use AuthorizesRequests;
+
+
+    public function delete($event_id)
+    {
+        $event = Event::find($event_id);
+        $this->authorize('delete', $event);
+
+        $path = public_path('/assets/images/events') . "/" . $event->image;
+        unlink($path);
+
+        $event->delete();
+
+        session()->flash('message', 'رویداد مورد نظر با موفقیت حذف گردید !!!');
+
+    }
     public function render()
     {
         $events = Event::paginate(3);

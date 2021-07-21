@@ -25,7 +25,6 @@ class ContactUsComponent extends Component
 
         Message::create($data);
         session()->flash('message' ,'پیام شما با موفقیت ارسال شد');
-
     }
 
     public function render()

@@ -1,23 +1,25 @@
 <div>
     <section>
         <div class="container mt-1">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src={{ asset('assets/images/resources/emamzadeh.png')  }} alt="First slide">
+            <div class="row">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src={{ asset('assets/images/resources/emamzadeh.png')  }} alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100" src={{ asset('assets/images/resources/slider.jpg')  }} alt="First slide">
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src={{ asset('assets/images/resources/slider.jpg')  }} alt="First slide">
-                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
     </section>
@@ -30,13 +32,15 @@
                     </h2>
                 </div>
 
-                <div class="card-deck">
+                <div class="card-group">
                     @foreach ($news as $n)
-                        <div class="card">
+                        <div class="card col-md-3 col-sm-3 col-lg-3">
                         <img src={{ asset("assets/images/News/home/$n->image")  }} class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $n->title }}</h5>
-                            <p class="card-text"><a href="{{ route("news", ['id' => $n->id]) }}" class="btn btn-primary">بیشتر بخوانید</a></p>
+                            <h5 class="card-title" style="text-align: right;">{{ $n->title }}</h5>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ route("news", ['id' => $n->id]) }}" class="btn btn-primary btn-sm">بیشتر بخوانید</a>
                         </div>
                         </div>
                     @endforeach
@@ -155,21 +159,21 @@
                                     <h3>رویداد های اخیر</h3>
                                 </div>
                             </div>
-                            <div class="evnt-wrap remove-ext5">
-                                <div class="row mrg20">
+                            <div class="evnt-wrap remove-ext5" style="background-color: #5CAB4B;">
+                                <div class="row mrg20 m-5">
                                     @foreach ($events as $event )
-                                        <div class="col-md-4 col-sm-4 col-lg-4">
+                                        <div class="col-md-3 col-sm-3 col-lg-3 rounded" style="background-color: white;">
                                             <div class="evnt-box">
                                                 <div class="evnt-thmb">
-                                                    <a href="index.html#" title=""><img src={{ asset("assets/images/events/$event->image") }} alt="evnt-img1.jpg"></a>
+                                                    <img src={{ asset("assets/images/events/$event->image") }} alt="evnt-img1.jpg" class="rounded">
                                                 </div>
                                                 <div class="evnt-info">
                                                     <h4>{{ $event->title }}</h4>
-                                                    <ul class="pst-mta">
-                                                        <li class="thm-clr">{{ Hekmatinasser\Verta\Facades\Verta::instance($event->date_event )->format('Y-n-j')}}</li>
-                                                        <li class="thm-clr">{{ Hekmatinasser\Verta\Facades\Verta::instance($event->date_event )->format('H:i')}}</li>
+                                                    <ul class="event-mta mt-2">
+                                                        <li><i class="fa fa-map-marker"></i>شهرستان زرند - آستان مقدس امامزاده حمزه</li>
+                                                        <li><i class="flaticon-clock"></i>{{ Hekmatinasser\Verta\Facades\Verta::instance($event->date_event )->format('Y-n-j H:i')}}</li>
                                                     </ul>
-                                                    <p>{{ $event->description }}</p>
+                                                    <a href="{{ route('events') }}" class="btn btn-info btn-sm" style="float: left;">اطلاعات بیشتر</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -188,28 +192,25 @@
             <div class="container">
                 <div class="sec-title2 text-center">
                     <div class="sec-title-inner2">
-                        <span>آخرین دیدگاه های</span>
-                        <h3>خادمین</h3>
+                        <h3>آخرین تصاویر</h3>
                     </div>
                 </div>
-                <div class="testi-wrap style2 text-center">
-                    <div class="testi-car owl-carousel">
-                        <div class="testi-itm">
-                            <i><img src={{ asset("assets/images/resources/contact_logo.png") }} alt="testi-img1.jpg"></i>
-                            <div class="testi-info">
-                                <h4>محمد</h4>
-                                <p class="digahz">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+                <!-- start -->
+                <div class="bord-wrap">
+                    <div class="row mrg">
+                        @foreach ($pictures as $pic)
+                            <div class="col-md-3 col-sm-6 col-lg-3">
+                                <div class="bord-box">
+                                    <img src={{ Storage::url($pic->image) }} alt="bord-img1.jpg">
+                                    <div class="bord-info">
+                                        <h4>{{ $pic->name }}</h4>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="testi-itm">
-                            <i><img src={{ asset("assets/images/resources/contact_logo.png") }} alt="testi-img2.jpg"></i>
-                            <div class="testi-info">
-                                <h4>کاظم</h4>
-                                <p class="digahz">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
+                <!-- end -->
             </div>
         </div>
     </section>
@@ -220,13 +221,10 @@
                 <div class="nwsltr-wrp text-center">
                     <div class="nwsltr-innr">
                         <div class="nwsltr-title">
-                            <h3>عضویت در خبرنامه</h3>
+                            <h3>عضویت در خبرنامه واتساپ</h3>
                             <span>دریافت آخرین اخبار، رویداد ها و مراسمات</span>
                         </div>
-                        <form>
-                            <input type="email" placeholder="ایمیل خود را وارد کنید">
-                            <button type="submit">عضویت در خبرنامه</button>
-                        </form>
+                        <a href="" class="btn btn-secondary mt-2">عضویت در خبرنامه</a>
                     </div>
                 </div>
             </div>

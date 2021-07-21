@@ -1,7 +1,7 @@
 <div>
     <section>
         <div class="gap remove-bottom black-layer2 opc85">
-            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax12.jpg') }});"></div>
+            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax9.jpg') }});"></div>
             <div class="container">
                 <div class="page-title-wrap">
                     {{-- <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1> --}}

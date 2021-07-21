@@ -20,6 +20,6 @@ class Content extends Model
     }
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->belongsToMany(Comment::class, 'comment_content', 'content_id', 'comment_id');
     }
 }

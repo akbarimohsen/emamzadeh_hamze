@@ -6,7 +6,7 @@
   function initMap() {
     var map = new google.maps.Map(document.getElementById('contact-loc'), {
       zoom: 13,
-      center: {lat: 35.46, lng: 51.44}
+      center: {lat: 30.812199258156703, lng: 56.549904593230806}
     });
     var image = 'assets/images/map-icon.png';
 
@@ -14,7 +14,7 @@
       map: map,
       draggable: true,
       animation: google.maps.Animation.DROP,
-      position: {lat: 35.46, lng: 51.44},
+      position: {lat: 30.812199258156703, lng: 56.549904593230806},
       icon: image
     });
     marker.addListener('click', toggleBounce);

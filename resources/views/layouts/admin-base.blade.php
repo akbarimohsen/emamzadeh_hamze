@@ -33,6 +33,7 @@
 
 
 
+
 </head>
 
 <body class="fixed-nav sticky-footer" id="page-top">
@@ -302,5 +303,14 @@
     <!-- Custom scripts for this page-->
     <script src="{{ asset('assets/admin/js/admin-charts.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/dropzone.min.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector('#description' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+
 </body>
 </html>

@@ -19,11 +19,7 @@ class CreateCommentsTable extends Migration
             $table->string('user_name');
             $table->string('email');
             $table->text('description');
-            $table->unsignedBigInteger('content_id');
             $table->integer('confirm')->default(0)->comment('0 for is not confirmed & 1 is confimed');
-
-            $table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade')->onUpdate('cascade');
-
             $table->timestamps();
         });
     }

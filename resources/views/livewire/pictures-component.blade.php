@@ -27,7 +27,6 @@
                                         <div class="prtfl-info">
                                             <a href={{ Storage::url($picture->image) }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
                                             <h4>{{ $picture->name }}</h4>
-                                            <span>لورم ایپسوم</span>
                                         </div>
                                     </div>
                                     {{-- <div class="prtfl-box">

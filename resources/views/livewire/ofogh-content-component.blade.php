@@ -4,12 +4,12 @@
             <div class="fixed-bg" style="background-image: url(assets/images/parallax13.jpg);"></div>
             <div class="container">
                 <div class="page-title-wrap">
-                    <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1>
-                    <h2>عنوان پست</h2>
+                    <h1></h1>
+                    <h2>{{ $content->title }}</h2>
                     <ul class="breadcrumbs">
-                        <li><a href="index.html" title="">صفحه اصلی</a></li>
-                        <li><a href="blog.html" title="">بلاگ</a></li>
-                        <li>عنوان پست</li>
+                        <li><a href="{{ route('home') }}" title="">صفحه اصلی</a></li>
+                        <li><a href="{{ route('ofogh') }}" title="">مرکز افق</a></li>
+                        <li>{{ $content->title }}</li>
                     </ul>
                 </div><!-- Page Title Wrap -->
             </div>
@@ -67,9 +67,8 @@
                                     </div>
                                 </div>
                                 <div class="blog-detail-desc">
-                                    <p>{{ $content->short_description }}</p>
-                                    <blockquote class="brd-rd5"><p><i class="fa fa-quote-left thm-clr perf"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p></blockquote>
-                                    <p>{{ $content->description }}</p>
+                                    <blockquote class="brd-rd5"><p>{{ $content->short_description }}</p></blockquote>
+                                    <p>{!! $content->description !!}</p>
                                     <div class="pst-shr-tgs">
                                         <div class="team-scl float-left">
                                             <span>اشتراک مطلب: </span>
@@ -125,28 +124,6 @@
                                                         @endif
                                                      </li>
                                                 @endforeach
-                                                {{--<div class="cmt-bx">
-                                                    <img class="brd-rd50" src={{ asset("assets/images/resources/cmt-img1.jpg") }} alt="cmt-img1.jpg">
-                                                    <div class="cmt-inf">
-                                                        <h6>مایک از سوئد</h6>
-                                                        <span>1398/12/12</span>
-                                                        <p itemprop="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
-                                                        <a class="comment-reply-link thm-clr" href="blog-detail.html#" title="">پاسخ</a>
-                                                    </div>
-                                                </div>
-                                                <ul class="children">
-                                                    <li>
-                                                        <div class="cmt-bx">
-                                                            <img class="brd-rd50" src={{ asset("assets/images/resources/cmt-img2.jpg") }} alt="cmt-img2.jpg">
-                                                            <div class="cmt-inf">
-                                                                <h6>الیفا از کانادا</h6>
-                                                                <span>1398/12/24</span>
-                                                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
-                                                                <a class="comment-reply-link thm-clr" href="blog-detail.html#" title="">پاسخ</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                              </ul> --}}
                                         </ul><!-- Comment Thread -->
                                     </div><!-- Comments Wrap -->
                                     <div class="cnt-frm cmt-frm">

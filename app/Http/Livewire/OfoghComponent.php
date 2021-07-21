@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\Content;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -11,9 +12,24 @@ use Livewire\WithPagination;
 class OfoghComponent extends Component
 {
     use WithPagination;
+    use AuthorizesRequests;
 
     public function mount()
     {
+
+    }
+    public function delete($content_id)
+    {
+        $content = Content::find($content_id);
+
+        $this->authorize('delete', $content);
+
+        $path = public_path('/assets/images/contents') . '/' . $content->image;
+        unlink($path);
+
+        $content->delete();
+
+        session()->flash('message', "مطلب مورد نظر با موفقیت حذف گردید !!!");
 
     }
     public function render()

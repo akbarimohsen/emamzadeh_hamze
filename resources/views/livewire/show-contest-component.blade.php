@@ -22,21 +22,6 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-lg-3">
                             <div class="sidebar-wrp">
-                                {{-- <div class="wdgt-box">
-                                    <h4>جستجو</h4>
-                                    <form class="srch-frm">
-                                        <input type="text" placeholder="جستجو کنید ...">
-                                        <button type="submit" class="thm-clr"><i class="fa fa-search"></i></button>
-                                    </form>
-                                </div> --}}
-                                {{-- <div class="wdgt-box">
-                                    <h4>دسته بندی</h4>
-                                    <ul class="cat-lst">
-                                        @foreach ($categories as $category )
-                                            <li><a href="{{ route('ofogh.categories' , ['category_id' => $category->id]) }}" title="">{{ $category->name }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </div> --}}
                                 <div class="wdgt-box">
                                     <h4>آخرین مسابقات</h4>
                                     <div class="rcnt-wrp">
