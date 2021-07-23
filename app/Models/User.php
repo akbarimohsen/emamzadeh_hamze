@@ -28,7 +28,8 @@ class User extends Authenticatable
         'last_name',
         'name',
         'phone',
-        'password',
+        'is_confirm',
+        'password'
     ];
 
     /**
@@ -62,5 +63,10 @@ class User extends Authenticatable
     public function contests()
     {
         return $this->belongsToMany(Contest::class,'user_contest', 'user_id' , 'contest_id');
+    }
+
+    public function twoFactorCode()
+    {
+        return $this->hasOne(TwofactorCode::class);
     }
 }

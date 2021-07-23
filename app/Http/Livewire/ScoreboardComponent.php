@@ -32,8 +32,10 @@ class ScoreboardComponent extends Component
         ->orderBy("correct_number" , "desc")
         ->get();
 
+        $contest = Contest::find($this->contest_id);
         return view('livewire.scoreboard-component',[
-            "users" => $users
+            "users" => $users,
+            'contest' => $contest
         ])->layout('layouts.base');
     }
 }

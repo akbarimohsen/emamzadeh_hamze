@@ -85,16 +85,13 @@
         <div class="gap blue-layer opc85">
             <div class="fixed-bg" style="background-image: url(assets/images/parallax9.jpg);"></div>
             <div class="container">
-                <div class="newsletter-wrap2 text-center">
-                    <div class="newsletter-inner">
-                        <div class="nwsltr-title2 text-center">
-                            <h3>عضویت در خبرنامه</h3>
+                <div class="nwsltr-wrp text-center">
+                    <div class="nwsltr-innr">
+                        <div class="nwsltr-title">
+                            <h3 style="color: greenyellow;">عضویت در خبرنامه واتساپ</h3>
                             <span>دریافت آخرین اخبار، رویداد ها و مراسمات</span>
                         </div>
-                        <form>
-                            <input type="email" placeholder="آدرس ایمیل">
-                            <button class="thm-btn" type="submit">عضویت</button>
-                        </form>
+                        <a href="https://chat.whatsapp.com/LoWfA55gw820aUAHOfuvPE" class="btn btn-secondary mt-2">عضویت در خبرنامه</a>
                     </div>
                 </div>
             </div>

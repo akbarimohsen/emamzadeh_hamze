@@ -1,15 +1,14 @@
 <div>
     <section>
         <div class="gap remove-bottom black-layer2 opc85">
-            <div class="fixed-bg" style="background-image: url(assets/images/parallax13.jpg);"></div>
+            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax1.jpg')}});"></div>
             <div class="container">
                 <div class="page-title-wrap">
-                    <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1>
-                    <h2>عنوان پست</h2>
+                    <h2>جدول امتیازات</h2>
                     <ul class="breadcrumbs">
-                        <li><a href="index.html" title="">صفحه اصلی</a></li>
-                        <li><a href="blog.html" title="">بلاگ</a></li>
-                        <li>عنوان پست</li>
+                        <li><a href="{{ route('home')  }}" title="">صفحه اصلی</a></li>
+                        <li><a href="route('contests')" title="">مسابقه</a></li>
+                        <li>{{ $contest->title }}</li>
                     </ul>
                 </div><!-- Page Title Wrap -->
             </div>

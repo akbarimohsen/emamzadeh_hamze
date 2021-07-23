@@ -14,6 +14,11 @@ class Comment extends Model
     {
         return $this->belongsToMany(Content::class,'comment_content','comment_id','content_id');
     }
+
+    public function contests()
+    {
+        return $this->belongsToMany(Contest::class,'comment_contest','comment_id','contest_id');
+    }
     public function answers()
     {
         return $this->hasMany(Answer::class);

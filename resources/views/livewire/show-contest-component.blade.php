@@ -1,15 +1,14 @@
 <div>
     <section>
         <div class="gap remove-bottom black-layer2 opc85">
-            <div class="fixed-bg" style="background-image: url(assets/images/parallax13.jpg);"></div>
+            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax16.jpg') }});"></div>
             <div class="container">
                 <div class="page-title-wrap">
-                    <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1>
-                    <h2>عنوان پست</h2>
+                    <h2>{{ $contest->title }}</h2>
                     <ul class="breadcrumbs">
-                        <li><a href="index.html" title="">صفحه اصلی</a></li>
-                        <li><a href="blog.html" title="">بلاگ</a></li>
-                        <li>عنوان پست</li>
+                        <li><a href="{{ route('home') }}" title="">صفحه اصلی</a></li>
+                        <li><a href="{{ route('contests') }}" title="">مسابقات</a></li>
+                        <li>{{ $contest->title }}</li>
                     </ul>
                 </div><!-- Page Title Wrap -->
             </div>
@@ -62,11 +61,21 @@
                                                 <li><a href="{{ route('contest.scoreboard',['contest_id' => $contest_id ]) }}" class="btn btn-success">جدول امتیازات</a></li>
                                             @else
                                                 @auth
-                                                    <li>
-                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enterContest">
-                                                            ورود به مسابقه
-                                                        </button>
-                                                    </li>
+                                                    @if(Auth::user()->is_confirm == 0)
+                                                        <li>
+                                                            <div class="alert alert-info">
+                                                                شماره موبایل شما فعال نشده است. برای فعالسازی
+                                                                <a href="{{ route('user.dashboard') }}" class="btn btn-primary btn-sm">اینجا</a>
+                                                                کلیک کنید.
+                                                            </div>
+                                                        </li>
+                                                    @else
+                                                        <li>
+                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enterContest">
+                                                                ورود به مسابقه
+                                                            </button>
+                                                        </li>
+                                                    @endif
                                                 @else
                                                     <li><p>ابتدا باید <a href="{{ route('register') }}" style="color:blue;">ثبت نام</a> یا <a href="{{ route('login') }}" style="color:blue;">وارد</a> سایت شوید</p></li>
                                                 @endauth
@@ -114,6 +123,51 @@
                                             <a href="blog-detail.html#" title="">نماز</a>، <a href="blog-detail.html#" title="">روزه</a>، <a href="blog-detail.html#" title="">حج</a>، <a href="blog-detail.html#" title="">زکات</a>
                                         </div>
                                     </div>
+
+                                    <div class="cmts-wrp">
+                                        <h3>دیدگاه ها </h3>
+                                        @if(Session::has('message'))
+                                           <script>
+                                           Swal.fire({
+                                            icon: 'success',
+                                            title: 'ثبت نظر',
+                                            text: '{{ Session::get("message") }}'
+                                          })
+                                          </script>
+                                        @endif
+                                         <ul class="cmt-thrd">
+                                                @foreach ($contest->comments as $comment)
+                                                    <li>
+                                                        @if ($comment->confirm == 1)
+                                                            <div class="cmt-bx">
+                                                                <img class="brd-rd50" src={{ asset("assets/images/resources/cmt-img.png") }} alt="cmt-img1.jpg">
+                                                                <div class="cmt-inf">
+                                                                    <h6>{{ $comment->user_name }}</h6>
+                                                                    <span>{{ $comment->created_at->format('m/d/Y') }}</span>
+                                                                    <p itemprop="description">{{ $comment->description }}</p>
+                                                                    {{-- <a class="comment-reply-link thm-clr" href="blog-detail.html#" title="">پاسخ</a> --}}
+                                                                </div>
+                                                            </div>
+                                                            <ul class="children">
+                                                                <li>
+                                                                    @foreach ($comment->answers as $answer)
+                                                                        <div class="cmt-bx">
+                                                                            <img class="brd-rd50" src={{ asset("assets/images/resources/cmt-img.png") }} alt="cmt-img2.jpg">
+                                                                            <div class="cmt-inf">
+                                                                                <h6>{{ $answer->name }}</h6>
+                                                                                <span>{{ $answer->created_at->format('m/d/Y') }}</span>
+                                                                                <p>{{ $answer->description }}</p>
+                                                                                {{-- <a class="comment-reply-link thm-clr" href="blog-detail.html#" title="">پاسخ</a> --}}
+                                                                            </div>
+                                                                        </div>
+                                                                    @endforeach
+                                                                </li>
+                                                            </ul>
+                                                        @endif
+                                                     </li>
+                                                @endforeach
+                                        </ul><!-- Comment Thread -->
+                                    </div><!-- Comments Wrap -->
 
                                     <div class="cnt-frm cmt-frm">
                                         <h3>ارسال دیدگاه</h3>

@@ -18,4 +18,9 @@ class Contest extends Model
     {
         return $this->belongsToMany(User::class, 'user_contest', 'contest_id' , 'user_id');
     }
+
+    public function comments()
+    {
+        return $this->belongsToMany(Comment::class, 'comment_contest', 'contest_id', 'comment_id');
+    }
 }

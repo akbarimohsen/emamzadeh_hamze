@@ -7,7 +7,7 @@
                     <h1 style="color: white;">درباره ما </h1>
                     <h2>درباره ما</h2>
                     <ul class="breadcrumbs">
-                        <li><a href="index.html" title="">صفحه اصلی</a></li>
+                        <li><a href="{{ route('home') }}" title="">صفحه اصلی</a></li>
                         <li>درباره ما</li>
                     </ul>
                 </div><!-- Page Title Wrap -->
@@ -21,7 +21,7 @@
                     <div class="sec-title-inner">
                         <h3><span class="secndry-clr">کار هایی که ما انجام میدهیم</span></h3>
                     </div>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                    {{-- <p></p> --}}
                 </div>
                 <div class="srv-wrap3">
                     <div class="row perdir">
@@ -40,7 +40,7 @@
                                                 <h4>آموزش قرآن</h4>
                                                 <span>آموزش آیات و قرائت</span>
                                             </div>
-                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                                            {{-- <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p> --}}
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-6">
@@ -50,7 +50,7 @@
                                                 <h4>کمک های مالی و خیریه</h4>
                                                 <span>کمک به افراد نیازمند</span>
                                             </div>
-                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                                            {{-- <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p> --}}
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-6">
@@ -60,7 +60,7 @@
                                                 <h4>توسعه و بازسازی مساجد</h4>
                                                 <span>ساخت و بازسازی مساجد</span>
                                             </div>
-                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                                            {{-- <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p> --}}
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-6">
@@ -70,7 +70,7 @@
                                                 <h4>کمک به فقرا</h4>
                                                 <span>کمک به فقرا و نیازمندان</span>
                                             </div>
-                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                                            {{-- <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -88,16 +88,16 @@
             <div class="container">
                 <div class="sec-title style2 text-center">
                     <div class="sec-title-inner">
-                        <span>تیم قدرتمند ما</span>
+                        <span>خادمین امامزاده حمزه (ع)</span>
                         <h3>اغضای تیم</h3>
                     </div>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p>
+                    <p></p>
                 </div>
                 <div class="team-wrap2 text-center remove-ext3">
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-lg-3">
                             <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-1.jpg") }} alt="team-img2-1.jpg">
+                                <img src={{ asset("assets/images/resources/contact_logo.png") }} alt="team-img2-1.jpg">
                                 <div class="team-info2">
                                     <h4>زهرا</h4>
                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
@@ -112,9 +112,9 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-lg-3">
                             <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-2.jpg") }} alt="team-img2-2.jpg">
+                                <img src={{ asset('assets/images/resources/contact_logo.png') }} alt="team-img2-1.jpg">
                                 <div class="team-info2">
-                                    <h4>امیر</h4>
+                                    <h4>زهرا</h4>
                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
                                     <div class="team-scl">
                                         <a href="team.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -127,9 +127,9 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-lg-3">
                             <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-3.jpg") }} alt="team-img2-3.jpg">
+                                <img src={{ asset('assets/images/resources/contact_logo.png') }} alt="team-img2-1.jpg">
                                 <div class="team-info2">
-                                    <h4>فاطمه</h4>
+                                    <h4>زهرا</h4>
                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
                                     <div class="team-scl">
                                         <a href="team.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -142,69 +142,9 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-lg-3">
                             <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-4.jpg") }} alt="team-img2-4.jpg">
+                                <img src={{ asset('assets/images/resources/contact_logo.png') }} alt="team-img2-1.jpg">
                                 <div class="team-info2">
-                                    <h4>معصومه</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                                    <div class="team-scl">
-                                        <a href="team.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
-                                        <a href="team.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
-                                        <a href="team.html#" title="تلگرام" target="_blank"><i class="fa fa-send"></i></a>
-                                        <a href="team.html#" title="فیسبوک" class="fa fa-facebook"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-lg-3">
-                            <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-5.jpg") }} alt="team-img2-5.jpg">
-                                <div class="team-info2">
-                                    <h4>نرگس</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                                    <div class="team-scl">
-                                        <a href="team.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
-                                        <a href="team.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
-                                        <a href="team.html#" title="تلگرام" target="_blank"><i class="fa fa-send"></i></a>
-                                        <a href="team.html#" title="فیسبوک" class="fa fa-facebook"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-lg-3">
-                            <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-6.jpg") }} alt="team-img2-6.jpg">
-                                <div class="team-info2">
-                                    <h4>محمد</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                                    <div class="team-scl">
-                                        <a href="team.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
-                                        <a href="team.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
-                                        <a href="team.html#" title="تلگرام" target="_blank"><i class="fa fa-send"></i></a>
-                                        <a href="team.html#" title="فیسبوک" class="fa fa-facebook"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-lg-3">
-                            <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-7.jpg") }} alt="team-img2-7.jpg">
-                                <div class="team-info2">
-                                    <h4>شهربانو</h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                                    <div class="team-scl">
-                                        <a href="team.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
-                                        <a href="team.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
-                                        <a href="team.html#" title="تلگرام" target="_blank"><i class="fa fa-send"></i></a>
-                                        <a href="team.html#" title="فیسبوک" class="fa fa-facebook"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-lg-3">
-                            <div class="team-box2">
-                                <img src={{ asset("assets/images/resources/team-img2-8.jpg") }} alt="team-img2-8.jpg">
-                                <div class="team-info2">
-                                    <h4>ثریا</h4>
+                                    <h4>زهرا</h4>
                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
                                     <div class="team-scl">
                                         <a href="team.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>

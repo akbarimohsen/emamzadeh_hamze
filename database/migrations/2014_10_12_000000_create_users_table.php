@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('name')->comment('User Name');
             $table->string('phone')->unique();
+            $table->integer('is_confirm')->default(0);
             $table->string('password');
             $table->rememberToken();
             $table->string('utype')->default('USR');

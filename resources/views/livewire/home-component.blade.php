@@ -8,7 +8,10 @@
                             <img class="d-block w-100" src={{ asset('assets/images/resources/emamzadeh.png')  }} alt="First slide">
                         </div>
                         <div class="carousel-item">
-                        <img class="d-block w-100" src={{ asset('assets/images/resources/slider.jpg')  }} alt="First slide">
+                            <img class="d-block w-100" src={{ asset('assets/images/resources/slider.jpg')  }} alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src={{ asset('assets/images/resources/ghadir.jpg')  }} alt="First slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -199,7 +202,7 @@
                 <div class="bord-wrap">
                     <div class="row mrg">
                         @foreach ($pictures as $pic)
-                            <div class="col-md-3 col-sm-6 col-lg-3">
+                            <div class="col-md-3 col-sm-6 col-lg-3 m-1">
                                 <div class="bord-box">
                                     <img src={{ Storage::url($pic->image) }} alt="bord-img1.jpg">
                                     <div class="bord-info">
@@ -224,7 +227,7 @@
                             <h3>عضویت در خبرنامه واتساپ</h3>
                             <span>دریافت آخرین اخبار، رویداد ها و مراسمات</span>
                         </div>
-                        <a href="" class="btn btn-secondary mt-2">عضویت در خبرنامه</a>
+                        <a href="https://chat.whatsapp.com/LoWfA55gw820aUAHOfuvPE" class="btn btn-secondary mt-2">عضویت در خبرنامه</a>
                     </div>
                 </div>
             </div>

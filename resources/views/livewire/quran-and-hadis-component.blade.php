@@ -1,7 +1,7 @@
 <div>
     <section>
         <div class="gap remove-bottom black-layer2 opc85">
-            <div class="fixed-bg" style="background-image: url(assets/images/parallax13.jpg);"></div>
+            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/resources/slide1.jpg') }});"></div>
             <div class="container">
                 <div class="page-title-wrap">
                 <h2>احادیث و قرآن</h2>

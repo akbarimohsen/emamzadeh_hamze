@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Ansonika">
-  <title>UDEMA - Admin dashboard</title>
+  <title>پنل مدیریت </title>
 
   <!-- Favicons-->
   <link rel="shortcut icon" href="{{ asset('assets/admin/img/favicon.ico" type="image/x-icon')}}">
@@ -39,7 +39,7 @@
 <body class="fixed-nav sticky-footer" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-default fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/admin/img/logo.png')}}" data-retina="true" alt="" width="163" height="36"></a>
+    <a class="navbar-brand" href="index.html"><img src="{{ asset("assets/images/logo3.png") }}" data-retina="true" alt=""></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -78,7 +78,7 @@
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
-          <a class="nav-link" href="bookmarks.html">
+          <a class="nav-link" href="#">
             <i class="fa fa-fw fa-heart"></i>
             <span class="nav-link-text">بوکمارک</span>
           </a>
@@ -122,14 +122,14 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseProfile">
             <li>
-              <a href="user-profile.html">پروفایل کاربر</a>
+              <a href="{{ route('user.dashboard') }}">پروفایل </a>
             </li>
-			<li>
+			{{-- <li>
               <a href="teacher-profile.html">پروفایل مدرس</a>
-            </li>
+            </li> --}}
           </ul>
         </li>
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+		{{-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-gear"></i>
             <span class="nav-link-text">اجزاء</span>
@@ -142,7 +142,7 @@
               <a href="tables.html">جداول</a>
             </li>
           </ul>
-        </li>
+        </li> --}}
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -152,7 +152,7 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope"></i>
             <span class="d-lg-none">پیام ها
@@ -228,8 +228,8 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item small" href="#">مشاهده همه هشدارها</a>
           </div>
-        </li>
-        <li class="nav-item">
+        </li> --}}
+        {{-- <li class="nav-item">
           <form class="form-inline my-2 my-lg-0 mr-lg-2">
             <div class="input-group">
               <input class="form-control search-top" type="text" placeholder="جستجو...">
@@ -240,7 +240,7 @@
               </span>
             </div>
           </form>
-        </li>
+        </li> --}}
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-fw fa-sign-out"></i>خروج</a>

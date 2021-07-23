@@ -18,6 +18,7 @@
     <link rel="stylesheet" href={{ asset("assets/css/rtl.css") }}>
     <link rel="stylesheet" href={{ asset("assets/css/shabnam.css") }}>
     <link rel="stylesheet" href={{ asset("assets/css/responsive.css") }}>
+    <link rel="stylesheet" href="{{ asset('assets/css/user-dashboard.css') }}">
     @livewireStyles
     <style>
         #login-buttons{
@@ -46,10 +47,10 @@
         </div><!-- Pageloader Wrap -->
         <header class="style2">
             <div class="container">
-                <div class="logo"><a href="index.html" title="لوگو"><img src={{ asset("assets/images/logo3.png") }} alt="لوگو"></a></div>
+                <div class="logo"><a href="{{ route('home') }}" title="لوگو"><img src={{ asset("assets/images/logo3.png") }} alt="لوگو"></a></div>
                 <nav>
                     <div>
-                        <a class="srch-btn" href="index.html#" title=""><i class="fa fa-search"></i></a>
+                        <a class="srch-btn" href="#" title=""><i class="fa fa-search"></i></a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
                             @csrf
                         </form>
@@ -93,16 +94,16 @@
         </header><!-- Header -->
         <div class="rspn-hdr">
             <div class="rspn-mdbr">
-                <ul class="rspn-scil">
+                {{-- <ul class="rspn-scil">
                     <li><a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="index.html#" title="لینکدین" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                </ul>
-                <form class="rspn-srch">
+                </ul> --}}
+                {{-- <form class="rspn-srch">
                     <input type="text" placeholder="‌‌ کلید واژه را وارد کنید ... " />
                      <button type="submit"> <i class="fa fa-search"> </i> </button>
-                </form>
+                </form> --}}
             </div>
             <div class="lg-mn">
                 <div class="logo"><a href="#" title="Logo"> <img src={{ asset("assets/images/logo2.png") }} alt="logo2.png"> </a> </div>
@@ -199,7 +200,9 @@
                             <div class="col-md-4 col-sm-12 col-lg-4">
                                 <div class="wdgt-box style2">
                                     <div class="logo"><a href="index.html" title="Logo"><img src={{ asset("assets/images/logo2.png") }} alt="logo2.png"></a></div>
-                                    <p>مرکز اسلامی <b>جامعه</b> در سال 1373 با هدف خدمت به جامعه اسلامی تشکیل شده است.</p>
+                                    <p>ما خادمین امامزاده حمزه (ع) در راستای بهبود و رفع مشکلات فرهنگی جامعه قدم بر میداریم. امیدواریم که با کمک شما
+                                        بتوانیم این اهداف را به انجام برسانیم.
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-12 col-lg-8">
@@ -208,10 +211,10 @@
                                         <div class="wdgt-box">
                                             <h4>لینک های مفید</h4>
                                             <ul>
-                                                <li><a href="index.html#" title="">بلاگ</a></li>
-                                                <li><a href="index.html#" title="">خدمات</a></li>
-                                                <li><a href="index.html#" title="">کمک مالی</a></li>
-                                                <li><a href="index.html#" title="">تیم</a></li>
+                                                <li><a href="{{ route('ofogh') }}" title="">مرکز افق</a></li>
+                                                <li><a href="{{ route('quranAndHadis') }}" title="">قرآن و حدیث</a></li>
+                                                <li><a href="{{ route('pictures') }}" title="">عکس ها</a></li>
+                                                <li><a href="{{ route('videos') }}" title="">ویدیو ها</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -219,10 +222,10 @@
                                         <div class="wdgt-box">
                                             <h4>صفحات سایت</h4>
                                             <ul>
-                                                <li><a href="index.html#" title="">صفحه اصلی</a></li>
-                                                <li><a href="index.html#" title="">مطالب سایت</a></li>
-                                                <li><a href="index.html#" title="">تالار گفتمان</a></li>
-                                                <li><a href="index.html#" title="">درباره ما</a></li>
+                                                <li><a href="{{ route('home') }}" title="">صفحه اصلی</a></li>
+                                                <li><a href="{{ route('ofogh') }}" title="">مطالب</a></li>
+                                                <li><a href="{{ route('books') }}" title="">کتاب های الکترونیکی</a></li>
+                                                <li><a href="{{ route('about-us') }}" title="">درباره ما</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -230,9 +233,9 @@
                                         <div class="wdgt-box">
                                             <h4>تماس با ما</h4>
                                             <ul class="cont-lst">
-                                                <li><i class="flaticon-location-pin"></i>خیابان مرکزی - بخش اصلی - ساختمان مرکزی - مرکز اسلامی جامعه</li>
-                                                <li><i class="flaticon-call"></i>123-456-789</li>
-                                                <li><i class="flaticon-email"></i><a href="index.html#" title="">info@mail.com</a></li>
+                                                <li><i class="flaticon-location-pin"></i>شهرستان زرند- خیابان شهید صدوقی- آستان مقدس امامزاده حمزه(ع)</li>
+                                                <li><i class="flaticon-call"></i> 09210447107</li>
+                                                {{-- <li><i class="flaticon-email"></i><a href="index.html#" title="">info@mail.com</a></li> --}}
                                             </ul>
                                         </div>
                                     </div>
@@ -241,12 +244,12 @@
                         </div>
                     </div><!-- Footer Data -->
                     <div class="bottom-bar">
-                        <p>1398 | تمامی حقوق برای جامعه مفحوظ میباشد</p>
+                        <p>تمامی حقوق کاربران این سایت محفوظ می باشد.</p>
                         <div class="scl">
-                            <a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="index.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
-                            <a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a>
-                            <a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a>
+                            {{-- <a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a> --}}
+                            <a href="https://www.instagram.com/emamzadeh_hamzeh/?hl=en" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
+                            {{-- <a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a> --}}
+                            {{-- <a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a> --}}
                         </div>
                     </div><!-- Bottom Bar -->
                 </div>
@@ -263,10 +266,11 @@
     <script src={{ asset("assets/js/owl.carousel.min.js") }}></script>
     <script src={{ asset("assets/js/jquery.circliful.min.js") }}></script>
     <script src={{ asset("assets/js/custom-scripts.js") }}></script>
-    <script src={{ asset("https://maps.googleapis.com/maps/api/js?key=AIzaSyALsm2XWtRQ5INM_ITSCwYB7rQdI9ILgy0") }}></script>
-    <script src={{ asset("assets/js/google-map-int.js") }}></script>
-    <script src={{ asset("assets/js/custom-scripts.js") }}></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src={{ asset("assets/js/custom-scripts.js") }}></script>
+    <script src={{ asset("assets/js/google-map-int.js") }}></script>
+    <script src={{ asset("https://maps.googleapis.com/maps/api/js?key=AIzaSyALsm2XWtRQ5INM_ITSCwYB7rQdI9ILgy0") }}></script>
+
 
 </body>
 </html>
