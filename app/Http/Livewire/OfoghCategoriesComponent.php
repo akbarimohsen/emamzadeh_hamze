@@ -18,9 +18,12 @@ class OfoghCategoriesComponent extends Component
     public function render()
     {
         $contents = Category::find($this->category_id)->contents()->paginate(9);
-
+        $category = Category::find($this->category_id);
+        $categories = Category::all();
         return view('livewire.ofogh-categories-component',[
-            'contents' => $contents
+            'contents' => $contents,
+            'category' => $category,
+            'categories' => $categories
         ])->layout('layouts.base');
     }
 }

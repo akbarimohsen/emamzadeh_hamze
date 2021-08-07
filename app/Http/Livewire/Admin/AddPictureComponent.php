@@ -20,7 +20,7 @@ class AddPictureComponent extends Component
             'image' => 'required|image|mimes:png,jpg,jpeg'
         ]);
 
-        $data['image'] = $this->image->store('pictures', 'public');
+        $data['image'] = $this->image->store('pictures');
 
         Picture::create($data);
 

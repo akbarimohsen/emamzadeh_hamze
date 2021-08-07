@@ -36,12 +36,14 @@ class OfoghComponent extends Component
     {
 
         $contents = Content::paginate(9);
+        $categories = Category::all();
             // $contents = DB::table('contents')->join('category_content' , 'contents.id' ,'=','content_id')
             // ->join('categories' , 'category_content.category_id', '=' , 'categories.id')
             // ->select('contents.*')->where('categories.id' , '=' , $this->category_id)
             // ->paginate(9);
         return view('livewire.ofogh-component',[
-            'contents' => $contents
+            'contents' => $contents,
+            'categories' => $categories
         ])->layout('layouts.base');
     }
 }

@@ -78,9 +78,9 @@
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{{ route('admin.showUsers') }}">
             <i class="fa fa-fw fa-heart"></i>
-            <span class="nav-link-text">بوکمارک</span>
+            <span class="nav-link-text">کاربران</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Adding">

@@ -15,6 +15,7 @@ class ContestEnterComponent extends Component
     use WithPagination;
     public $contest_id;
     public $end_exam_time;
+    public $all_questions;
 
     public function mount($contest_id)
     {
@@ -35,6 +36,7 @@ class ContestEnterComponent extends Component
             $this->end_exam_time = $date->toDateTimeString();
             session(["user$user_id" => $this->end_exam_time]);
         }
+
     }
 
 
@@ -54,5 +56,7 @@ class ContestEnterComponent extends Component
             "questions" => $questions,
             "end_exam_time" => $this->end_exam_time
         ])->layout('layouts.base');
+
+
     }
 }

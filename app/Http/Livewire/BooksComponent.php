@@ -20,6 +20,16 @@ class BooksComponent extends Component
         $filename = $book->filename;
         return Storage::disk('public')->download($filename);
     }
+    public function delete($book_id)
+    {
+        $book = Book::find($book_id);
+        $filename = $book->filename;
+        Storage::disk('public')->delete($filename);
+        $book->delete();
+        $message = "کتاب با موفقیت حذف گردید.";
+        session()->flash('message', $message);
+        return redirect()->route('books');
+    }
     public function render()
     {
         $books = Book::paginate(6);

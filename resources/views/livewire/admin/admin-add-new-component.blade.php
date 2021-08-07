@@ -34,6 +34,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
+                            <label>توضیحات کوتاه خبر</label>
+                            <textarea wire:model.lazy="short_description" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
                             <label>توضیحات خبر</label>
                             <textarea wire:model.lazy="description" class="form-control"></textarea>
                         </div>

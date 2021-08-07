@@ -34,20 +34,19 @@
                         آخرین اخبار
                     </h2>
                 </div>
-
-                <div class="card-group">
+                <ul class="list-unstyled mt-4 ">
                     @foreach ($news as $n)
-                        <div class="card col-md-3 col-sm-3 col-lg-3">
-                        <img src={{ asset("assets/images/News/home/$n->image")  }} class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" style="text-align: right;">{{ $n->title }}</h5>
-                        </div>
-                        <div class="card-footer">
-                            <a href="{{ route("news", ['id' => $n->id]) }}" class="btn btn-primary btn-sm">بیشتر بخوانید</a>
-                        </div>
-                        </div>
+                        <li class="media py-3 mt-1 shadow bg-white">
+                            <img class="ml-3" src={{ asset("assets/images/News/home/$n->image") }} alt="امامزاده حمزه (ع)">
+                            <div class="media-body" style="text-align: right;">
+                                <h5 class="mt-0 mb-1" style="text-align: right;">{{ $n->title }}</h5>
+                                <p>{!! $n->short_description  !!} </p>
+                                <br>
+                                <a href="{{ route("news", ['id' => $n->id]) }}" class="btn btn-info btn-sm">ادامه خبر</a>
+                            </div>
+                        </li>
                     @endforeach
-                </div>
+                </ul>
         </div>
     </section>
     <section>

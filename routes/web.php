@@ -16,6 +16,7 @@ use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminMessagesComponent;
 use App\Http\Livewire\Admin\AdminShowContestsComponent;
 use App\Http\Livewire\Admin\AdminShowQuestionsComponent;
+use App\Http\Livewire\Admin\AdminUsersComponent;
 use App\Http\Livewire\BooksComponent;
 use App\Http\Livewire\ConstructionNaveComponent;
 use App\Http\Livewire\ContactUsComponent;
@@ -95,7 +96,7 @@ Route::middleware(['auth:sanctum', 'verified' ,'adminAuth'])->group(function(){
     Route::get('/admin/contests/{id}/showQuestions',AdminShowQuestionsComponent::class)->name('admin.showQuestion');
     Route::get('/admin/addNews', AdminAddNewComponent::class)->name('admin.addNews');
     Route::get('/admin/addBook', AdminAddBookComponent::class)->name('admin.addBook');
-
+    Route::get('/admin/users',AdminUsersComponent::class)->name('admin.showUsers');
 });
 
 // enter Contest Route

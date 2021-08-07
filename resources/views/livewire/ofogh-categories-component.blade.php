@@ -1,14 +1,14 @@
 <div>
     <section>
         <div class="gap remove-bottom black-layer2 opc85">
-            <div class="fixed-bg" style="background-image: url{{ asset('assets/images/parallax13.jpg') }});"></div>
+            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax13.jpg') }});"></div>
             <div class="container">
                 <div class="page-title-wrap">
-                    <h1><img src={{ asset("assets/images/resources/page-title-ayat.png") }} alt="page-title-ayat.png"></h1>
-                    <h2>مطالب وبلاگ</h2>
-                    <ul class="breadcrumbs">
-                        <li><a href="index.html" title="">صفحه اصلی</a></li>
-                        <li>مطالب وبلاگ</li>
+                    <h2>{{ $category->name }}</h2>
+                    <ul class="breadcrumbs pt-5">
+                        <li><a href="{{ route('home') }}" title="">صفحه اصلی</a></li>
+                        <li><a href="{{ route('ofogh') }}">مرکز افق</a></li>
+                        <li>{{ $category->name }}</li>
                     </ul>
                 </div><!-- Page Title Wrap -->
             </div>
@@ -18,31 +18,64 @@
         <div class="gap">
             <div class="container">
                 <div class="blog-wrap remove-ext7">
+                    @if(Session::has('message'))
+                            <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'حذف مطلب',
+                                        text: '{{ Session::get("message") }}'
+                                        })
+                            </script>
+                    @endif
                     <div class="row mrg40">
-                        @foreach ($contents as $content)
-                            <div class="col-md-4 col-sm-6 col-lg-4 fadeIn" data-wow-duration=".8s" data-wow-delay=".2s">
-                                <div class="blog-box">
-                                    <div class="blog-thmb">
-                                        <a href="{{ route('ofogh.content' , ['id' => $content->id]) }}" title=""><img src={{ asset("assets/images/contents/$content->image") }} alt="post-img1.jpg"></a>
-                                    </div>
-                                    <div class="blog-info">
-                                        <ul class="pst-mta2">
-                                            @foreach ($content->categories as $category )
-                                                <li><a href="{{ route('ofogh.categories' , ['category_id' => $category->id]) }}" title="">{{ $category->name }}</a></li>
-                                            @endforeach
-                                        </ul>
-                                        <h4><a href="blog-detail.html" title="">{{ $content->short_description }}</a></h4>
-                                        <p>{{ $content->description }}</p>
-                                        <a href="{{ route('ofogh.content',['id' => $content->id]) }}" title="">بیشتر بخوانید</a>
-                                    </div>
+                        <div class="col-md-3 col-sm-6 col-lg-3">
+                            <div class="sidebar-wrp">
+                                <div class="wdgt-box">
+                                    <h4>دسته بندی</h4>
+                                    <ul class="cat-lst">
+                                        @foreach ($categories as $category )
+                                            <li><a href="{{ route('ofogh.categories' , ['category_id' => $category->id]) }}" title="">{{ $category->name }}</a></li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
-                        @endforeach
+                        </div>
+                        <div class="col-md-9 col-sm-12 col-lg-9">
+                            <div class="row">
+                                @foreach ($contents as $content)
+                                    <div class="col-md-6 col-sm-6 col-lg-4 fadeIn" data-wow-duration=".8s" data-wow-delay=".2s">
+                                        <div class="blog-box">
+                                            <div class="blog-thmb">
+                                                <a href="{{ route('ofogh.content' , ['id' => $content->id]) }}" title=""><img src={{ asset("assets/images/contents/$content->image") }} alt="post-img1.jpg"></a>
+                                            </div>
+                                            <div class="blog-info">
+                                                {{-- <ul class="pst-mta2">
+                                                    @if (!is_null($content->categories))
+                                                        @foreach ($content->categories as $category )
+                                                            <li><a href="{{ route('ofogh.categories',['category_id' => $category->id]) }}" title="">{{ $category->name }}</a></li>
+                                                        @endforeach
+                                                    @endif
+                                                </ul> --}}
+                                                <h5> {{ $content->title }} </h5>
+                                                <p>{{ $content->short_description }}</p>
+
+                                                <a href="{{ route('ofogh.content',['id' => $content->id]) }}" class="mt-2" title="">بیشتر بخوانید</a>
+                                                @auth
+                                                    @if(Auth::user()->utype == "ADM")
+                                                        <a href="#" class="btn btn-danger" wire:click="delete({{$content->id}})" style="float: left;" >حذف</a>
+                                                    @endif
+                                                @endauth
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                 </div><!-- Blog Wrap -->
-                <div class="pagination-wrap text-center">
+                {{-- <div class="pagination-wrap text-center">
                     {{ $contents->links('pagination::bootstrap-4') }}
-                </div><!-- Pagination Wrap -->
+                </div><!-- Pagination Wrap --> --}}
             </div>
         </div>
     </section>

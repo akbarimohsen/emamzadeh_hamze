@@ -10,6 +10,6 @@ class News extends Model
 {
     use HasFactory;
     use HasTrixRichText;
-    protected $fillable = ['title', 'description' , 'image'];
+    protected $fillable = ['title','short_description', 'description' , 'image'];
 
 }

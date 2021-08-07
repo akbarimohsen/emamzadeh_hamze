@@ -12,6 +12,7 @@ class AdminAddNewComponent extends Component
 
     public $title;
     public $description;
+    public $short_description;
     public $image;
 
     use WithFileUploads;
@@ -21,6 +22,7 @@ class AdminAddNewComponent extends Component
         $data = $this->validate([
             "title" => 'required|string',
             'description' => 'required|string',
+            'short_description' => 'required|string',
             'image' => 'required|image|mimes:png,jpg,jpeg'
             ]);
 
@@ -38,7 +40,7 @@ class AdminAddNewComponent extends Component
             $constraint->aspectRatio();
         })->save($dest_path1 . '/' . $img_name);
 
-        $img2->resize(222, 180 , function($constraint) {
+        $img2->resize(64, 64, function($constraint) {
             $constraint->aspectRatio();
         })->save($dest_path2 . '/' . $img_name);
 

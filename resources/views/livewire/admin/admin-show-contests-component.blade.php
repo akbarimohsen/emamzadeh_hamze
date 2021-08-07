@@ -40,7 +40,7 @@
                             <td>
                                 <a href="{{ route('admin.addQuestion' , ['id' => $contest->id ]) }}" class="btn btn-primary m-1" >افزودن سوال</a>
                                 <a href="{{ route('admin.showQuestion' , ['id' => $contest->id]) }}" class="btn btn-success m-1">مشاهده سوالات</a>
-                                <a href="#" class="btn btn-danger m-1">حذف مسابقه</a>
+                                <button wire:click="deleteContest({{ $contest->id }})" class="btn btn-danger m-1">حذف مسابقه</button>
                             </td>
                         </tr>
                     @endforeach

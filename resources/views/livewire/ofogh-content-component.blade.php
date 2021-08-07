@@ -1,12 +1,11 @@
 <div>
     <section>
         <div class="gap remove-bottom black-layer2 opc85">
-            <div class="fixed-bg" style="background-image: url(assets/images/parallax13.jpg);"></div>
+            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/parallax13.jpg')}});"></div>
             <div class="container">
                 <div class="page-title-wrap">
-                    <h1></h1>
                     <h2>{{ $content->title }}</h2>
-                    <ul class="breadcrumbs">
+                    <ul class="breadcrumbs pt-5">
                         <li><a href="{{ route('home') }}" title="">صفحه اصلی</a></li>
                         <li><a href="{{ route('ofogh') }}" title="">مرکز افق</a></li>
                         <li>{{ $content->title }}</li>
@@ -23,11 +22,11 @@
                                                 <div class="col-md-3 col-sm-6 col-lg-3">
                             <div class="sidebar-wrp">
                                 <div class="wdgt-box">
-                                    <h4>جستجو</h4>
+                                    {{-- <h4>جستجو</h4>
                                     <form class="srch-frm">
                                         <input type="text" placeholder="جستجو کنید ...">
                                         <button type="submit" class="thm-clr"><i class="fa fa-search"></i></button>
-                                    </form>
+                                    </form> --}}
                                 </div>
                                 <div class="wdgt-box">
                                     <h4>دسته بندی</h4>
