@@ -77,8 +77,10 @@
                                             <a href="blog-detail.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a>
                                         </div>
                                         <div class="tag-clouds float-right">
-                                            <span>برچسب ها: </span>
-                                            <a href="blog-detail.html#" title="">نماز</a>، <a href="blog-detail.html#" title="">روزه</a>، <a href="blog-detail.html#" title="">حج</a>، <a href="blog-detail.html#" title="">زکات</a>
+                                            <span> دسته بندی ها :   </span>
+                                            @foreach ($content->categories as $category )
+                                                <a href="{{ route('ofogh.categories', ['category_id' => $category->id]) }}">{{ $category->name }}</a>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <div class="cmts-wrp">

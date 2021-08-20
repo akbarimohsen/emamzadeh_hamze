@@ -62,7 +62,8 @@
                                                 <a href="{{ route('ofogh.content',['id' => $content->id]) }}" class="mt-2" title="">بیشتر بخوانید</a>
                                                 @auth
                                                     @if(Auth::user()->utype == "ADM")
-                                                        <a href="#" class="btn btn-danger" wire:click="delete({{$content->id}})" style="float: left;" >حذف</a>
+                                                        <a href="#" class="btn btn-danger btn-sm" wire:click="delete({{$content->id}})" style="float: left;" >حذف</a>
+                                                        <a href="{{ route('admin.editContent',['id' => $content->id]) }}" class="btn btn-primary btn-sm mx-1" style="float: left;" >تغییر</a>
                                                     @endif
                                                 @endauth
                                             </div>

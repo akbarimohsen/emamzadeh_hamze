@@ -13,6 +13,7 @@ use App\Http\Livewire\Admin\AdminAddQuestionComponent;
 use App\Http\Livewire\Admin\AdminAddVideoComponent;
 use App\Http\Livewire\Admin\AdminCommentsComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Admin\AdminEditContentComponent;
 use App\Http\Livewire\Admin\AdminMessagesComponent;
 use App\Http\Livewire\Admin\AdminShowContestsComponent;
 use App\Http\Livewire\Admin\AdminShowQuestionsComponent;
@@ -83,6 +84,7 @@ Route::middleware(['auth:sanctum', 'verified' ,'adminAuth'])->group(function(){
 
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/addContent',AdminAddContentComponent::class)->name('admin.addContent');
+    Route::get('/admin/contents/{id}/edit',AdminEditContentComponent::class)->name('admin.editContent');
     Route::get('/admin/addPicture',AddPictureComponent::class)->name('admin.addPicture');
     Route::get('/admin/addCategory',AdminAddCategoryComponent::class)->name('admin.addCategory');
     Route::get('/admin/addEvent',AdminAddEventComponent::class)->name('admin.addEvent');

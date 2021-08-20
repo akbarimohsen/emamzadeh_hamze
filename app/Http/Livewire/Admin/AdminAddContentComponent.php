@@ -58,7 +58,7 @@ class AdminAddContentComponent extends Component
 
     public function render()
     {
-        $categories = Category::all();
+        $categories = Category::where('title','content')->all();
         return view('livewire.admin.admin-add-content-component',[
             "categories" => $categories
         ])->layout('layouts.admin-base');
