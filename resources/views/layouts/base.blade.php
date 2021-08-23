@@ -270,7 +270,5 @@
     <script src={{ asset("assets/js/custom-scripts.js") }}></script>
     <script src={{ asset("assets/js/google-map-int.js") }}></script>
     <script src={{ asset("https://maps.googleapis.com/maps/api/js?key=AIzaSyALsm2XWtRQ5INM_ITSCwYB7rQdI9ILgy0") }}></script>
-
-
 </body>
 </html>

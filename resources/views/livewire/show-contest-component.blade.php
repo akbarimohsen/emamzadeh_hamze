@@ -65,7 +65,7 @@
                                                         <li>
                                                             <div class="alert alert-info">
                                                                 شماره موبایل شما فعال نشده است. برای فعالسازی
-                                                                <a href="{{ route('user.dashboard') }}" class="btn btn-primary btn-sm">اینجا</a>
+                                                                <a href="{{ route('user.phoneAuthentication') }}" class="btn btn-primary btn-sm">اینجا</a>
                                                                 کلیک کنید.
                                                             </div>
                                                         </li>

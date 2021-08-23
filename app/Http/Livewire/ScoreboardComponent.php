@@ -33,6 +33,7 @@ class ScoreboardComponent extends Component
         ->get();
 
         $contest = Contest::find($this->contest_id);
+        $contest_users = Contest::find($this->contest_id)->users;
         return view('livewire.scoreboard-component',[
             "users" => $users,
             'contest' => $contest

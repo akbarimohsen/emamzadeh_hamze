@@ -34,6 +34,8 @@ use App\Http\Livewire\PicturesComponent;
 use App\Http\Livewire\QuranAndHadisComponent;
 use App\Http\Livewire\ScoreboardComponent;
 use App\Http\Livewire\ShowContestComponent;
+use App\Http\Livewire\User\PhoneAuthenticationComponent;
+use App\Http\Livewire\User\UserContestComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\VideoesComponent;
 use Illuminate\Support\Facades\Route;
@@ -76,6 +78,8 @@ Route::get("/books",BooksComponent::class)->name('books');
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 
     Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/phoneAuthentication', PhoneAuthenticationComponent::class)->name('user.phoneAuthentication');
+    Route::get('/user/contests', UserContestComponent::class)->name('user.contests');
 });
 
 

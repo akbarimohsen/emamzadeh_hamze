@@ -47,27 +47,30 @@
                             <div class="blog-detail">
                                 <div class="blog-detail-inf brd-rd5">
                                     <table class="table">
-                                        <thead>
+                                        <thead class="thead-light">
                                             <tr>
-                                                <th>ID</th>
+                                                <th>رتبه</th>
                                                 <th>نام شرکت کننده</th>
                                                 <th>امتیاز از ۱۰۰</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php $counter = 1; ?>
-                                        @foreach($users as $user)
+                                            @foreach($users as $user)
 
-                                        <tr @if($counter <= 3) class="table-success" @endif>
-                                            <td>{{ $user->id }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ ($user->correct_number / $question_numbers)*100 }}</td>
+                                                <tr @if($counter <= 3) class="table-success" @elseif (Auth::user() && $user->id == Auth::user()->id) class="table-info" @endif>
+                                                    <td>{{ $counter }}</td>
+                                                    <td>{{ $user->name }}</td>
+                                                    <td>{{ ($user->correct_number / $question_numbers)*100 }}</td>
 
-                                            <?php $counter++ ?>
-                                        </tr>
-                                        @endforeach
+                                                    <?php $counter++ ?>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
+                                    <div class="row">
+                                        <span class="alert alert-info">کسانی که در مسابقه شرکت کرده اند, اما اسمشان در اینجا دیده نمی شود متاسفانه به هیچ سوالی نتوانستند پاسخ صحیح دهند.</span>
+                                    </div>
                                 </div>
                                 <!-- Modal -->
                             </div>
