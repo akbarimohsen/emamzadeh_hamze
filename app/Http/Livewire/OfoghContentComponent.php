@@ -41,12 +41,12 @@ class OfoghContentComponent extends Component
     {
         $content = Content::find($this->c_id);
         $categories = Category::all();
-        $last_contents = Content::orderBy('created_at' , 'DESC')->limit(5)->get();
+        $last_contents = Content::where('is_speech',$content->is_speech)->orderBy('created_at' , 'DESC')->limit(5)->get();
 
         return view('livewire.ofogh-content-component',[
             'content' => $content,
             'categories' => $categories,
-            'last_contents' => $last_contents
+            'last_contents' => $last_contents,
         ])->layout('layouts.base');
     }
 }

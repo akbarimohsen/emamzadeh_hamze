@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Message;
+use Artesaos\SEOTools\Facades\SEOMeta;
 use Livewire\Component;
 
 class ContactUsComponent extends Component
@@ -29,6 +30,7 @@ class ContactUsComponent extends Component
 
     public function render()
     {
+        SEOMeta::setTitle('تماس با ما');
         return view('livewire.contact-us-component')->layout('layouts.base');
     }
 }

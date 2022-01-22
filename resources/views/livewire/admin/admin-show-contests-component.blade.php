@@ -26,6 +26,7 @@
                     <th>ID</th>
                     <th>موضوع مسابقه</th>
                     <th>تعداد سوالات</th>
+                    <th>شرکت کنندگان</th>
                     <th>دکمه ها</th>
                   </tr>
                 </thead>
@@ -36,6 +37,9 @@
                             <td> {{ $contest->title }} </td>
                             <td>
                                 {{ $contest->questions_count }}
+                            </td>
+                            <td>
+                                <a href="{{ route('admin.contest_users', ['id' => $contest->id] ) }}" class="btn btn-sm btn-success">مشاهده شرکت کنندگان</a>
                             </td>
                             <td>
                                 <a href="{{ route('admin.addQuestion' , ['id' => $contest->id ]) }}" class="btn btn-primary m-1" >افزودن سوال</a>

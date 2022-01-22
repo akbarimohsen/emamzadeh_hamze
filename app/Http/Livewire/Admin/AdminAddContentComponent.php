@@ -19,6 +19,8 @@ class AdminAddContentComponent extends Component
     public $description;
     public $category;
     public $image;
+    public $is_speech;
+    public $day_of_speech;
 
     public function submit()
     {
@@ -27,15 +29,22 @@ class AdminAddContentComponent extends Component
             'short_description' => 'required|string',
             'description' => 'required|string',
             'category' => 'required',
-            'image' => 'required|image|mimes:png,jpg,jpeg'
+            'image' => 'required|image|mimes:png,jpg,jpeg',
+            'is_speech' => 'required'
         ]);
 
+        if($this->is_speech == 1)
+        {
+            $data['day_of_speech'] = $this->day_of_speech;
+            $dest_path = public_path('/assets/images/speeches');
+        }else{
+            $dest_path = public_path('/assets/images/contents');
+        }
         $data['user_id'] = Auth::user()->id;
         // $data['image'] = $this->image->store('contents_images','public');
         $img_name = time() . '.' . $this->image->extension();
 
         //resize Image
-        $dest_path = public_path('/assets/images/contents');
 
         $img = Image::make($this->image->path());
 
@@ -58,7 +67,7 @@ class AdminAddContentComponent extends Component
 
     public function render()
     {
-        $categories = Category::where('title','content')->all();
+        $categories = Category::where('title','content')->get();
         return view('livewire.admin.admin-add-content-component',[
             "categories" => $categories
         ])->layout('layouts.admin-base');

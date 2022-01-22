@@ -16,6 +16,10 @@ class CreateVideosTable extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->text('iframe');
+            $table->string('name');
+            $table->text('description');
+            $table->integer('is_speech')->default(0);
+            $table->string('day_of_speech')->nullable();
             $table->timestamps();
         });
     }

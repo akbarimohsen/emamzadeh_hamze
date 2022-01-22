@@ -1,77 +1,144 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>صفحه ثبت نام</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
 
-        </x-slot>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+	{{-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css"> --}}
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/animsition/css/animsition.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/daterangepicker/daterangepicker.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/login_page_util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/login_page_main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <x-jet-validation-errors class="mb-4" />
+<!--===============================================================================================-->
+</head>
+<body>
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-            <div class="mt-4">
-                <h1 style="text-align: center; font-weight:bold;">فرم ثبت نام</h1>
-            </div>
+	<div class="limiter">
+		<div class="container-login100 " style="background-color: #006400;">
+			<div class="wrap-login100 p-t-85 p-b-20" style="padding: 20px; border-radius:20px; ">
+				<form method="POST" class="login100-form validate-form" action="{{ route('register') }}">
+                    @csrf
+					<span class="login100-form-title p-b-70">
+						{{ __('صفحه ثبت نام') }}
+					</span>
+					<span class="login100-form-avatar">
+						<img src="{{ asset('assets/images/login_page_logo.jpg') }}" alt="AVATAR">
+					</span>
 
-            <div class="mt-4">
-                <x-jet-label for="first_name" style="text-align: right;" value="{{ __('نام') }}" />
-                <x-jet-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="first_name" />
-            </div>
 
-            <div class="mt-4">
-                <x-jet-label for="last_name" style="text-align: right;" value="{{ __('نام خانوادگی') }}" />
-                <x-jet-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autofocus autocomplete="last_name" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="name" style="text-align: right;" value="{{ __('نام کاربری') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="phone" style="text-align: right;" value="{{ __('شماره موبایل') }}" />
-                <x-jet-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" style="text-align: right;" value="{{ __('رمز عبور') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" style="text-align: right;" value="{{ __('تکرار رمز عبور') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-            {{-- <div class="mt-4">
-                {!! NoCaptcha::renderJs() !!}
-                {!! NoCaptcha::display() !!}
-            </div> --}}
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
-
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul class="mt-3" style="font-size: 10pt;" dir="rtl">
+                                @foreach ($errors->all() as $error)
+                                    <li style="color: red;">{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
-                    </x-jet-label>
-                </div>
-            @endif
+                    @endif
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" style="text-decoration: none;" href="{{ route('login') }}">
-                    {{ __('آیا حساب کاربری دارید ؟') }}
-                </a>
+                    {{-- @if (session('status'))
+                        <div class="mb-4 font-medium text-sm text-green-600">
+                            {{ session('status') }}
+                        </div>
+                    @endif --}}
 
-                <x-jet-button class="ml-4">
-                    {{ __('ثبت نام') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+                    {{-- First Name --}}
+					<div class="wrap-input100 validate-input m-t-10 m-b-30" data-validate = "نام خود را وارد کنید">
+						<input class="input100" type="text" name="first_name">
+						<span class="focus-input100"  data-placeholder="نام "></span>
+					</div>
+
+                    {{-- Last Name --}}
+                    <div class="wrap-input100 validate-input m-t-10 m-b-30" data-validate = "نام خانوادگی خود را وارد کنید">
+						<input class="input100" type="text" name="last_name">
+						<span class="focus-input100"  data-placeholder="نام خانوادگی"></span>
+					</div>
+
+                    {{-- User Name --}}
+                    <div class="wrap-input100 validate-input m-t-10 m-b-30" data-validate = "نام کاربری خود را وارد کنید">
+						<input class="input100" type="text" name="name">
+						<span class="focus-input100"  data-placeholder="نام کاربری"></span>
+					</div>
+
+                    {{-- Phone Number --}}
+                    <div class="wrap-input100 validate-input m-t-10 m-b-30" data-validate = "شماره موبایل خود را وارد کنید">
+						<input class="input100" type="text" name="phone">
+						<span class="focus-input100"  data-placeholder="شماره موبایل"></span>
+					</div>
+
+                    {{-- Password --}}
+					<div class="wrap-input100 validate-input m-b-30" data-validate="رمز عبور خود را وارد کنید">
+						<input class="input100" type="password" name="password">
+						<span class="focus-input100"  data-placeholder="رمز عبور"></span>
+					</div>
+
+                    {{-- Confirm Password --}}
+                    <div class="wrap-input100 validate-input m-b-30" data-validate="تکرار رمز عبور را وارد کنید">
+						<input class="input100" type="password" name="password_confirmation">
+						<span class="focus-input100"  data-placeholder="تکرار رمز عبور"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn">
+							ثبت نام
+						</button>
+					</div>
+
+					 <ul class="login-more p-t-45">
+						<li>
+							<span class="txt1">
+								حساب کاربری دارید؟
+							</span>
+
+							<a href="{{ route('login') }}" class="txt2">
+								صفحه ورود
+							</a>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{{ asset('assets/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assets/vendor/animsition/js/animsition.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assets/vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assets/vendor/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assets/vendor/daterangepicker/moment.min.js') }}"></script>
+	<script src="{{ asset('assets/vendor/daterangepicker/daterangepicker.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assets/vendor/countdowntime/countdowntime.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assets/js/login_page_main.js') }}"></script>
+
+</body>
+</html>
+
+

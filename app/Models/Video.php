@@ -9,6 +9,6 @@ class Video extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['iframe'];
+    protected $fillable = ['iframe','name','description', 'is_speech', 'day_of_speech'];
 
 }

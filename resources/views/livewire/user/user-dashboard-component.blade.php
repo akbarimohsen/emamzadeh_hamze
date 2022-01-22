@@ -19,7 +19,7 @@
                             <div class="list-group" id="list-tab" role="tablist">
                                 <a class="list-group-item list-group-item-action text-right active" id="list-home-list"  href="{{ route('user.dashboard') }}" role="tab" aria-controls="home">داشبورد</a>
                                 <a class="list-group-item list-group-item-action text-right" id="list-profile-list"  href="{{ route('user.phoneAuthentication') }}" role="tab" aria-controls="profile">فعال سازی موبایل</a>
-                                <a class="list-group-item list-group-item-action text-right" id="list-profile-list"  href="#list-profile" role="tab" aria-controls="profile">ثبت نام خادم افتخاری</a>
+                                <a class="list-group-item list-group-item-action text-right" id="list-profile-list"  href="{{ route('user.register_servant') }}" role="tab" aria-controls="profile">ثبت نام خادم افتخاری</a>
                                 <a class="list-group-item list-group-item-action text-right" id="list-messages-list" href="{{ route('user.contests') }}" role="tab" aria-controls="messages">مسابقات شرکت کرده</a>
                             </div>
 						</div>

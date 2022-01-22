@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     use HasFactory;
-    protected $fillable = ['title' , 'short_description' , 'description' , 'user_id' , 'image' ];
+    protected $fillable = ['title' , 'short_description' , 'description' , 'user_id' , 'image' , 'is_speech', 'day_of_speech'];
 
     public function categories()
     {

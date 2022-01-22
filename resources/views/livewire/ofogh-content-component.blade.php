@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="blog-detail-wrp">
                     <div class="row">
-                                                <div class="col-md-3 col-sm-6 col-lg-3">
+                         <div class="col-md-3 col-sm-6 col-lg-3">
                             <div class="sidebar-wrp">
                                 <div class="wdgt-box">
                                     {{-- <h4>جستجو</h4>
@@ -28,20 +28,36 @@
                                         <button type="submit" class="thm-clr"><i class="fa fa-search"></i></button>
                                     </form> --}}
                                 </div>
+                                @if($content->is_speech == 0)
+                                    <div class="wdgt-box">
+                                        <h4>دسته بندی</h4>
+                                        <ul class="cat-lst">
+                                            @foreach ($categories as $category )
+                                                <li><a href="{{ route('ofogh.categories' , ['category_id' => $category->id]) }}" title="">{{ $category->name }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="wdgt-box">
-                                    <h4>دسته بندی</h4>
-                                    <ul class="cat-lst">
-                                        @foreach ($categories as $category )
-                                            <li><a href="{{ route('ofogh.categories' , ['category_id' => $category->id]) }}" title="">{{ $category->name }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                <div class="wdgt-box">
-                                    <h4>آخرین مطالب</h4>
+                                    <h4>
+                                        @if ($content->is_speech)
+                                             آخرین سخنرانی ها
+                                        @else
+                                            آخرین مطالب
+                                        @endif
+                                    </h4>
                                     <div class="rcnt-wrp">
                                         @foreach ($last_contents as $c )
                                             <div class="rcnt-bx">
-                                                <a href="{{ route('ofogh.content' , ['id' => $c->id]) }}" title=""><img src={{ asset("assets/images/contents/$c->image") }} width="60px" height="20px" alt="rcnt-img1.jpg"></a>
+                                                <?php
+                                                    if($c->is_speech){
+                                                        $image_path = 'speeches';
+                                                    }
+                                                    else {
+                                                        $image_path = "contents";
+                                                    }
+                                                ?>
+                                                <a href="{{ route('ofogh.content' , ['id' => $c->id]) }}" title=""><img src={{ asset("assets/images/$image_path/$c->image") }} width="60px" height="20px" alt="rcnt-img1.jpg"></a>
                                                 <div class="rcnt-inf">
                                                     <h6><a href="{{ route('ofogh.content' , ['id' => $c->id]) }}" title="">{{ $c->title }}</a></h6>
                                                     <span class="thm-clr"><i class="fa fa-calendar-o"></i> {{ $c->created_at->format('H:i:s') }} </span>
@@ -55,7 +71,15 @@
                         <div class="col-md-9 col-sm-12 col-lg-9">
                             <div class="blog-detail">
                                 <div class="blog-detail-inf brd-rd5">
-                                    <img src={{ asset("assets/images/contents/$content->image") }} alt="blog-detail-img.jpg">
+                                    <?php
+                                        if($content->is_speech){
+                                            $image_path = 'speeches';
+                                        }
+                                        else {
+                                            $image_path = "contents";
+                                        }
+                                    ?>
+                                    <img src={{ asset("assets/images/$image_path/$content->image") }} alt="blog-detail-img.jpg">
                                     <div class="blog-detail-inf-inr">
                                         <h4>{{ $content->title }}</h4>
                                         <ul class="pst-mta">

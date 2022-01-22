@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\User;
 
 use Livewire\Component;
+use App\Events\SendAuthSMS;
 use App\Models\TwofactorCode;
 use App\Models\User;
 use Carbon\Carbon;
@@ -39,6 +40,7 @@ class PhoneAuthenticationComponent extends Component
         }
     }
 
+
     public function sendSMS()
     {
         $phone = Auth::user()->phone;
@@ -46,7 +48,7 @@ class PhoneAuthenticationComponent extends Component
         $code = "$code";
 
         $dt = Carbon::now();
-        $dt->addMinutes(5);
+        $dt->addMinutes(3);
         $dtStr = $dt->toDateTimeString();
 
         //check
@@ -57,13 +59,17 @@ class PhoneAuthenticationComponent extends Component
             $tfc->expired = $dtStr;
             $tfc->save();
         }else{
-            TwofactorCode::create([
+            $tfc = TwofactorCode::create([
                 'code' => $code,
                 'expired' => $dtStr,
                 'user_id' => Auth::user()->id
             ]);
         }
         $result = $this->sendCode($phone,$code);
+        if($result == 0)
+        {
+            $tfc->delete();
+        }
         session()->flash('smsMessage',$result);
         return redirect()->route('user.phoneAuthentication');
     }
@@ -108,8 +114,6 @@ class PhoneAuthenticationComponent extends Component
             {
                 $this->deleteCode();
                 $expired = 0;
-            }else{
-                $expired = 1;
             }
         }
         return view('livewire.user.phone-authentication-component',[

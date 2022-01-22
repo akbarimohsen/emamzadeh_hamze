@@ -35,7 +35,7 @@ class OfoghComponent extends Component
     public function render()
     {
 
-        $contents = Content::orderBy('created_at' , 'desc')->paginate(9);
+        $contents = Content::where('is_speech',0)->orderBy('created_at' , 'desc')->paginate(9);
         $categories = Category::all();
             // $contents = DB::table('contents')->join('category_content' , 'contents.id' ,'=','content_id')
             // ->join('categories' , 'category_content.category_id', '=' , 'categories.id')

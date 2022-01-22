@@ -74,6 +74,7 @@
                                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enterContest">
                                                                 ورود به مسابقه
                                                             </button>
+                                                            {{-- <p> تا اطلاع ثانوی سیستم به دلیل به روز رسانی, غیرفعال  می باشد </p> --}}
                                                         </li>
                                                     @endif
                                                 @else

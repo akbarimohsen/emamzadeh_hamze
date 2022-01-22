@@ -55,6 +55,34 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row mt-3 mb-2">
+                    <div class="col-md-12">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" wire:model="is_speech" checked>
+                            <label class="form-check-label pr-5" for="exampleCheck1">آیا این مطلب یک سخنرانی است ؟</label>
+                        </div>
+                    </div>
+                </div>
+
+                @if($is_speech == 1)
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group col-md-4">
+                                <label>روز سخنرانی</label>
+                                <select class="form-control" wire:model="day_of_speech">
+                                  <option value="day1" selected>شنبه</option>
+                                  <option value="day2">یکشنبه</option>
+                                  <option value="day3">دوشنبه</option>
+                                  <option value="day4">سه شنبه</option>
+                                  <option value="day5">چهارشنبه</option>
+                                  <option value="day6">پنج شنبه</option>
+                                  <option value="day7">جمعه</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -66,7 +94,7 @@
                 <!-- /row-->
             </div>
             <!-- /box_general-->
-            <p><button href="#0" class="btn_1 medium">ذخیره</button></p>
+            <p><button type="submit" class="btn_1 medium">ذخیره</button></p>
             </div>
         </form>
         <!-- /.container-fluid-->

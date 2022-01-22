@@ -39,6 +39,7 @@
                                     <select class="form-control" id="titleSelect" wire:model="title">
                                         <option value="hekmat" selected>حکمت</option>
                                         <option value="content">مطلب</option>
+                                        <option value="video">ویدیو</option>
                                     </select>
                                 </div>
                                 @error('title')

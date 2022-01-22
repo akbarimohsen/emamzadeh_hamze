@@ -56,16 +56,19 @@
                                         </thead>
                                         <tbody>
                                             <?php $counter = 1; ?>
-                                            @foreach($users as $user)
+                                            @if($users)
+                                                @foreach($users as $user)
 
-                                                <tr @if($counter <= 3) class="table-success" @elseif (Auth::user() && $user->id == Auth::user()->id) class="table-info" @endif>
-                                                    <td>{{ $counter }}</td>
-                                                    <td>{{ $user->name }}</td>
-                                                    <td>{{ ($user->correct_number / $question_numbers)*100 }}</td>
+                                                    <tr @if($counter <= 3) class="table-success" @elseif (Auth::user() && $user->id == Auth::user()->id) class="table-info" @endif>
+                                                        <td>{{ $counter }}</td>
+                                                        <td>{{ $user->name }}</td>
+                                                        <td>{{ ($user->correct_number / $question_numbers)*100 }}</td>
 
-                                                    <?php $counter++ ?>
-                                                </tr>
-                                            @endforeach
+                                                        <?php $counter++ ?>
+                                                    </tr>
+
+                                                @endforeach
+                                            @endif
                                         </tbody>
                                     </table>
                                     <div class="row">

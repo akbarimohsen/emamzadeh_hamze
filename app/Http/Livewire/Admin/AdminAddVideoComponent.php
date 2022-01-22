@@ -2,18 +2,33 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Category;
 use App\Models\Video;
 use Livewire\Component;
 
 class AdminAddVideoComponent extends Component
 {
     public $iframe;
+    public $name;
+    public $description;
+    public $category_id;
+    public $is_speech;
+    public $day_of_speech;
+
 
     public function submit()
     {
         $data = $this->validate([
-            'iframe' => 'required|string'
+            'iframe' => 'required|string',
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'is_speech' => 'required'
         ]);
+
+        if($this->is_speech == 1)
+        {
+            $data['day_of_speech'] = $this->day_of_speech;
+        }
 
         Video::create($data);
 
@@ -23,6 +38,10 @@ class AdminAddVideoComponent extends Component
     }
     public function render()
     {
-        return view('livewire.admin.admin-add-video-component')->layout('layouts.admin-base');
+
+        $categories = Category::where('title', 'video')->get();
+        return view('livewire.admin.admin-add-video-component',[
+            'categories' => $categories
+        ])->layout('layouts.admin-base');
     }
 }

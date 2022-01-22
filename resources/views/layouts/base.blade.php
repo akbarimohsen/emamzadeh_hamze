@@ -6,7 +6,6 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link rel="icon" href={{ asset("assets/images/favicon2.png") }} sizes="32x32" type="image/png">
-    <title>جامعه - پوسته مرکز اسلامی</title>
 
     <link rel="stylesheet" href={{ asset("assets/css/icons.min.css") }}>
     <link rel="stylesheet" href={{ asset("assets/css/bootstrap.min.css") }}>
@@ -19,6 +18,8 @@
     <link rel="stylesheet" href={{ asset("assets/css/shabnam.css") }}>
     <link rel="stylesheet" href={{ asset("assets/css/responsive.css") }}>
     <link rel="stylesheet" href="{{ asset('assets/css/user-dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/tab.css') }}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @livewireStyles
     <style>
         #login-buttons{
@@ -35,7 +36,7 @@
 </head>
 <body>
     <main>
-        <div class="pageloader-wrap">
+        {{-- <div class="pageloader-wrap">
             <div class="loader">
                 <div class="loader__bar"></div>
                 <div class="loader__bar"></div>
@@ -44,7 +45,7 @@
                 <div class="loader__bar"></div>
                 <div class="loader__ball"></div>
             </div>
-        </div><!-- Pageloader Wrap -->
+        </div><!-- Pageloader Wrap --> --}}
         <header class="style2">
             <div class="container">
                 <div class="logo"><a href="{{ route('home') }}" title="لوگو"><img src={{ asset("assets/images/logo3.png") }} alt="لوگو"></a></div>
@@ -77,6 +78,8 @@
 
                             <li><a href="{{ route('events') }}" title="">رویداد ها</a></li>
                             <li><a href="{{ route('contests') }}" title="">مسابقات </a></li>
+                            <li><a href="{{ route('contests') }}" title="">آموزش مجازی </a></li>
+
                             <li><a href="{{ route('books') }}" title="">کتاب ها </a></li>
 
                             <li class="menu-item-has-children"><a href="#">گالری</a>
@@ -94,16 +97,6 @@
         </header><!-- Header -->
         <div class="rspn-hdr">
             <div class="rspn-mdbr">
-                {{-- <ul class="rspn-scil">
-                    <li><a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="index.html#" title="لینکدین" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                </ul> --}}
-                {{-- <form class="rspn-srch">
-                    <input type="text" placeholder="‌‌ کلید واژه را وارد کنید ... " />
-                     <button type="submit"> <i class="fa fa-search"> </i> </button>
-                </form> --}}
             </div>
             <div class="lg-mn">
                 <div class="logo"><a href="#" title="Logo"> <img src={{ asset("assets/images/logo2.png") }} alt="logo2.png"> </a> </div>
@@ -270,5 +263,17 @@
     <script src={{ asset("assets/js/custom-scripts.js") }}></script>
     <script src={{ asset("assets/js/google-map-int.js") }}></script>
     <script src={{ asset("https://maps.googleapis.com/maps/api/js?key=AIzaSyALsm2XWtRQ5INM_ITSCwYB7rQdI9ILgy0") }}></script>
+    <script>
+                    $(document).ready(function() {
+                        $("#btnFetch").click(function() {
+                        // disable button
+                        $(this).prop("disabled", true);
+                        // add spinner to button
+                        $(this).html(
+                        '<i class="fa fa-circle-o-notch fa-spin"></i> صبرکنید...'
+                        );
+                        });
+                        });
+    </script>
 </body>
 </html>

@@ -164,6 +164,7 @@ return [
         \Intervention\Image\ImageServiceProvider::class,
         Hekmatinasser\Verta\VertaServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -233,7 +234,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => \Intervention\Image\Facades\Image::class,
         'Verta' => Hekmatinasser\Verta\Verta::class,
-        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class
     ],
 
 ];

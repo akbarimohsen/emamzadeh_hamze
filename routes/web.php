@@ -18,6 +18,7 @@ use App\Http\Livewire\Admin\AdminMessagesComponent;
 use App\Http\Livewire\Admin\AdminShowContestsComponent;
 use App\Http\Livewire\Admin\AdminShowQuestionsComponent;
 use App\Http\Livewire\Admin\AdminUsersComponent;
+use App\Http\Livewire\Admin\AdminUsersInContestComponent;
 use App\Http\Livewire\BooksComponent;
 use App\Http\Livewire\ConstructionNaveComponent;
 use App\Http\Livewire\ContactUsComponent;
@@ -34,10 +35,13 @@ use App\Http\Livewire\PicturesComponent;
 use App\Http\Livewire\QuranAndHadisComponent;
 use App\Http\Livewire\ScoreboardComponent;
 use App\Http\Livewire\ShowContestComponent;
+use App\Http\Livewire\SpeechesShowComponent;
 use App\Http\Livewire\User\PhoneAuthenticationComponent;
+use App\Http\Livewire\User\RegisterServentComponent;
 use App\Http\Livewire\User\UserContestComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\VideoesComponent;
+use App\Http\Livewire\VideoPageComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -58,8 +62,10 @@ Route::get('/ofogh',OfoghComponent::class)->name('ofogh');
 Route::get('/ofogh/{id}', OfoghContentComponent::class)->name('ofogh.content');
 Route::get('/gallary/pictures' , PicturesComponent::class)->name('pictures');
 Route::get('/ofogh/categories/{category_id}',OfoghCategoriesComponent::class)->name('ofogh.categories');
+Route::get('/speeches/{day}', SpeechesShowComponent::class)->name('speeches.show');
 Route::get('/events',EventsComponent::class)->name('events');
 Route::get('/videos',VideoesComponent::class)->name('videos');
+Route::get('/videos/{id}',VideoPageComponent::class)->name('video.show');
 Route::get('/contests',ContestsComponent::class)->name('contests');
 Route::get('/contests/{contest_id}', ShowContestComponent::class)->name('showContest');
 Route::get('/contests/{contest_id}/scoreboard',ScoreboardComponent::class)->name('contest.scoreboard');
@@ -80,6 +86,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
     Route::get('/user/phoneAuthentication', PhoneAuthenticationComponent::class)->name('user.phoneAuthentication');
     Route::get('/user/contests', UserContestComponent::class)->name('user.contests');
+    Route::get('/user/registerServant',RegisterServentComponent::class)->name('user.register_servant');
+
 });
 
 
@@ -100,6 +108,7 @@ Route::middleware(['auth:sanctum', 'verified' ,'adminAuth'])->group(function(){
     Route::get('/admin/showContests',AdminShowContestsComponent::class)->name('admin.showContests');
     Route::get('/admin/contests/{id}/addQuestion' , AdminAddQuestionComponent::class)->name('admin.addQuestion');
     Route::get('/admin/contests/{id}/showQuestions',AdminShowQuestionsComponent::class)->name('admin.showQuestion');
+    Route::get('/admin/contests/{id}/users',AdminUsersInContestComponent::class)->name('admin.contest_users');
     Route::get('/admin/addNews', AdminAddNewComponent::class)->name('admin.addNews');
     Route::get('/admin/addBook', AdminAddBookComponent::class)->name('admin.addBook');
     Route::get('/admin/users',AdminUsersComponent::class)->name('admin.showUsers');

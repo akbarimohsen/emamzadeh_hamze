@@ -17,112 +17,27 @@
     <section>
         <div class="gap">
             <div class="container">
-                <div class="prtfl-wrap text-center">
-
-                    <div class="prtfl-dta remove-ext1">
-                        <div class="row mrg15 masonry">
-                            @foreach ($videos as $video)
-                                <div class="col-md-4 col-sm-6 col-lg-4 fltr-itm fltr-itm1">
-                                    <div class="prtfl-box">
-                                        <?php echo $video->iframe; ?>
-                                    </div>
-                                    {{-- <div class="prtfl-box">
-                                        <img src={{ asset("assets/images/resources/prtfl-img2.jpg") }} alt="prtfl-img2.jpg">
-                                        <div class="prtfl-info">
-                                            <a href={{ asset("assets/images/resources/prtfl-img2.jpg") }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
-                                            <h4>مرکز اسلامی</h4>
-                                            <span>لورم ایپسوم</span>
-                                        </div>
-                                    </div> --}}
+              <div class="row">
+                    @foreach ($videos as $video )
+                        <div class="col-md-4 col-sm-6 col-lg-3">
+                            <div class="event-box2">
+                                <div class="event-thumb">
+                                    <?php echo $video->iframe ?>
                                 </div>
-                            @endforeach
-                            {{-- <div class="col-md-4 col-sm-6 col-lg-4 fltr-itm fltr-itm1">
-                                <div class="prtfl-box">
-                                    <img src={{ asset("assets/images/resources/prtfl-img1.jpg") }} alt="prtfl-img1.jpg">
-                                    <div class="prtfl-info">
-                                        <a href={{ asset("assets/images/resources/prtfl-img1.jpg") }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
-                                        <h4>مرکز اسلامی</h4>
-                                        <span>لورم ایپسوم</span>
-                                    </div>
-                                </div>
-                                <div class="prtfl-box">
-                                    <img src={{ asset("assets/images/resources/prtfl-img2.jpg") }} alt="prtfl-img2.jpg">
-                                    <div class="prtfl-info">
-                                        <a href={{ asset("assets/images/resources/prtfl-img2.jpg") }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
-                                        <h4>مرکز اسلامی</h4>
-                                        <span>لورم ایپسوم</span>
+                                <div class="event-info">
+                                    <p>نام ویدیو  : <strong> {{ $video->name }}</strong> </p>
+                                    <div class="mt-3">
+                                        <a href="{{ route('video.show', ['id' => $video->id]) }}" class="btn btn-info btn-sm" style="float: left;">صفحه ویدیو</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-lg-4 fltr-itm fltr-itm3">
-                                <div class="prtfl-box">
-                                    <img src={{ asset("assets/images/resources/prtfl-img3.jpg") }} alt="prtfl-img3.jpg">
-                                    <div class="prtfl-info">
-                                        <a href={{ asset("assets/images/resources/prtfl-img3.jpg") }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
-                                        <h4>مرکز اسلامی</h4>
-                                        <span>لورم ایپسوم</span>
-                                    </div>
-                                </div>
-                                <div class="prtfl-box">
-                                    <img src={{ asset("assets/images/resources/prtfl-img4.jpg") }} alt="prtfl-img4.jpg">
-                                    <div class="prtfl-info">
-                                        <a href={{ asset("assets/images/resources/prtfl-img4.jpg") }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
-                                        <h4>مرکز اسلامی</h4>
-                                        <span>لورم ایپسوم</span>
-                                    </div>
-                                </div>
-                                <div class="prtfl-box">
-                                    <img src={{ asset("assets/images/resources/prtfl-img5.jpg") }} alt="prtfl-img5.jpg">
-                                    <div class="prtfl-info">
-                                        <a href={{ asset("assets/images/resources/prtfl-img5.jpg") }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
-                                        <h4>مرکز اسلامی</h4>
-                                        <span>لورم ایپسوم</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-lg-4 fltr-itm fltr-itm2">
-                                <div class="prtfl-box">
-                                    <img src={{ asset("assets/images/resources/prtfl-img6.jpg") }} alt="prtfl-img6.jpg">
-                                    <div class="prtfl-info">
-                                        <a href={{ asset("assets/images/resources/prtfl-img6.jpg") }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
-                                        <h4>مرکز اسلامی</h4>
-                                        <span>لورم ایپسوم</span>
-                                    </div>
-                                </div>
-                                <div class="prtfl-box">
-                                    <img src={{ asset("assets/images/resources/prtfl-img7.jpg") }} alt="prtfl-img7.jpg">
-                                    <div class="prtfl-info">
-                                        <a href={{ asset("assets/images/resources/prtfl-img7.jpg") }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
-                                        <h4>مرکز اسلامی</h4>
-                                        <span>لورم ایپسوم</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-lg-6 fltr-itm fltr-itm4">
-                                <div class="prtfl-box">
-                                    <img src={{ asset("assets/images/resources/prtfl-img8.jpg") }} alt="prtfl-img8.jpg">
-                                    <div class="prtfl-info">
-                                        <a href={{ asset("assets/images/resources/prtfl-img8.jpg") }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
-                                        <h4>مرکز اسلامی</h4>
-                                        <span>لورم ایپسوم</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-lg-6 fltr-itm fltr-itm1 fltr-itm2 fltr-itm3 fltr-itm4">
-                                <div class="prtfl-box">
-                                    <img src={{ asset("assets/images/resources/prtfl-img9.jpg") }} alt="prtfl-img9.jpg">
-                                    <div class="prtfl-info">
-                                        <a href={{ asset("assets/images/resources/prtfl-img9.jpg") }} data-fancybox="gallery" title=""><i class="fa fa-plus"></i></a>
-                                        <h4>مرکز اسلامی</h4>
-                                        <span>لورم ایپسوم</span>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
-                        {{ $videos->links('pagination::bootstrap-4') }}
-                    </div>
-                </div>
+                    @endforeach
+              </div>
             </div>
         </div>
+        <div class="pagination-wrap text-center">
+            {{ $videos->links('pagination::bootstrap-4') }}
+        </div><!-- Pagination Wrap -->
     </section>
 </div>
