@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use App\Http\Livewire\AboutUsComponent;
+use App\Http\Livewire\Admin\AddCourseComponent;
 use App\Http\Livewire\Admin\AddPictureComponent;
 use App\Http\Livewire\Admin\AdminAddBookComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
@@ -19,11 +21,27 @@ use App\Http\Livewire\Admin\AdminShowContestsComponent;
 use App\Http\Livewire\Admin\AdminShowQuestionsComponent;
 use App\Http\Livewire\Admin\AdminUsersComponent;
 use App\Http\Livewire\Admin\AdminUsersInContestComponent;
+use App\Http\Livewire\Admin\ShowCoursesComponent;
 use App\Http\Livewire\BooksComponent;
 use App\Http\Livewire\ConstructionNaveComponent;
 use App\Http\Livewire\ContactUsComponent;
 use App\Http\Livewire\ContestEnterComponent;
 use App\Http\Livewire\ContestsComponent;
+use App\Http\Livewire\Education\AddHeadingComponent;
+use App\Http\Livewire\Education\AddLessonComponent;
+use App\Http\Livewire\Education\AddQuestionComponent;
+use App\Http\Livewire\Education\AddQuizComponent;
+use App\Http\Livewire\Education\Cart\Cart1Component;
+use App\Http\Livewire\Education\Cart\Cart2Component;
+use App\Http\Livewire\Education\Cart\Cart3Component;
+use App\Http\Livewire\Education\CourseComponent;
+use App\Http\Livewire\Education\EditHeadingComponent;
+use App\Http\Livewire\Education\Error404Component;
+use App\Http\Livewire\Education\HomeComponent as EducationHomeComponent;
+use App\Http\Livewire\Education\LessonComponent;
+use App\Http\Livewire\Education\Quiz\QuizComponent;
+use App\Http\Livewire\Education\Quiz\QuizDetailComponent;
+use App\Http\Livewire\Education\ShowQuestionsComponent;
 use App\Http\Livewire\EventsComponent;
 use App\Http\Livewire\FahangServicesComponent;
 use App\Http\Livewire\HomeComponent;
@@ -36,13 +54,20 @@ use App\Http\Livewire\QuranAndHadisComponent;
 use App\Http\Livewire\ScoreboardComponent;
 use App\Http\Livewire\ShowContestComponent;
 use App\Http\Livewire\SpeechesShowComponent;
+use App\Http\Livewire\User\CommentsComponent;
+use App\Http\Livewire\User\MyCoursesComponent;
+use App\Http\Livewire\User\OrderDetailComponent;
+use App\Http\Livewire\User\OrdersComponent;
 use App\Http\Livewire\User\PhoneAuthenticationComponent;
 use App\Http\Livewire\User\RegisterServentComponent;
+use App\Http\Livewire\User\Teacher\ShowCoursesComponent as TeacherShowCoursesComponent;
 use App\Http\Livewire\User\UserContestComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\VideoesComponent;
 use App\Http\Livewire\VideoPageComponent;
 use Illuminate\Support\Facades\Route;
+use Shetabit\Multipay\Invoice;
+use Shetabit\Payment\Facade\Payment;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,10 +100,26 @@ Route::get('/ConstructionNave', ConstructionNaveComponent::class)->name('constru
 Route::get("/News/{id}", NewsComponent::class)->name('news');
 Route::get("/books",BooksComponent::class)->name('books');
 
+# education routes
+Route::get('/education/error404', Error404Component::class)->name('education.error404');
+Route::get('/education', EducationHomeComponent::class)->name('education.home');
+Route::get('/education/course/{id}', CourseComponent::class)->name('education.showcourse');
+
+#
+
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
 
+
+// Lesson and Quiz Routes
+Route::middleware(['auth:sanctum', 'verified' , 'LessonLogin'])->group(function(){
+    Route::get('/education/courses/{id1}/heading/{id2}/lesson/{id3}', LessonComponent::class)->name('education.lesson');
+    Route::get('/education/courses/{id1}/heading/{id2}/quiz/{id3}', QuizDetailComponent::class)->name('education.quizDetail');
+    Route::get('/education/courses/{id1}/heading/{id2}/quiz/{id3}/enter', QuizComponent::class)->name('education.quiz.enter')->middleware('QuizLogin');
+
+});
 
 // User Routes
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
@@ -87,9 +128,32 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/phoneAuthentication', PhoneAuthenticationComponent::class)->name('user.phoneAuthentication');
     Route::get('/user/contests', UserContestComponent::class)->name('user.contests');
     Route::get('/user/registerServant',RegisterServentComponent::class)->name('user.register_servant');
+    // my courses
+    Route::get('/user/mycourses', MyCoursesComponent::class)->name('user.myCourses');
 
+
+    //orders
+    Route::get('/user/orders', OrdersComponent::class)->name('user.orders');
+    Route::get('/user/order/{id}', OrderDetailComponent::class)->name('user.order');
+    // education cart1
+    Route::get('/user/order/{id}/cart', Cart1Component::class)->name('user.order.cart');
+    Route::get('/user/order/{id}/pay', Cart2Component::class)->name('user.order.pay');
+    Route::get('/user/order/{id}/end', Cart3Component::class)->name('user.order.end');
+    Route::post('/user/order/{id}/purchase', [PaymentController::class , 'purchase'])->name('user.order.purchase');
 });
 
+// Teacher Routes
+Route::middleware(['auth:sanctum', 'verified','TeacherAuth'])->group(function(){
+
+    Route::get('/teacher/{id}/courses', TeacherShowCoursesComponent::class )->name('teacher.courses');
+    Route::get('/education/courses/{id}/addHeading', AddHeadingComponent::class)->name('education.addHeading');
+    Route::get('/education/courses/{id1}/heading/{id2}/addLesson', AddLessonComponent::class)->name('education.addCourse');
+    Route::get('/education/courses/{id1}/heading/{id2}/editHeading', EditHeadingComponent::class)->name('education.editHeading');
+    Route::get('/education/courses/{id1}/heading/{id2}/addQuiz', AddQuizComponent::class)->name('education.addQuiz');
+    Route::get('/education/courses/{id1}/heading/{id2}/quiz/{id3}/addQuestion', AddQuestionComponent::class)->name('quiz.addquestion');
+    Route::get('/education/courses/{id1}/heading/{id2}/quiz/{id3}/showQuestions', ShowQuestionsComponent::class)->name('quiz.showQuestions');
+    Route::get('/teacher/{id}/comments', CommentsComponent::class)->name('teacher.comments');
+});
 
 // Admin Routes
 Route::middleware(['auth:sanctum', 'verified' ,'adminAuth'])->group(function(){
@@ -112,6 +176,9 @@ Route::middleware(['auth:sanctum', 'verified' ,'adminAuth'])->group(function(){
     Route::get('/admin/addNews', AdminAddNewComponent::class)->name('admin.addNews');
     Route::get('/admin/addBook', AdminAddBookComponent::class)->name('admin.addBook');
     Route::get('/admin/users',AdminUsersComponent::class)->name('admin.showUsers');
+    Route::get('/admin/addCourses',AddCourseComponent::class)->name('admin.addCourse');
+    Route::get("/admin/showCourses", ShowCoursesComponent::class)->name('admin.showCourses');
+
 });
 
 // enter Contest Route

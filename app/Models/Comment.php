@@ -19,8 +19,14 @@ class Comment extends Model
     {
         return $this->belongsToMany(Contest::class,'comment_contest','comment_id','contest_id');
     }
+
     public function answers()
     {
         return $this->hasMany(Answer::class);
+    }
+
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class, 'comment_course', 'comment_id', 'course_id');
     }
 }

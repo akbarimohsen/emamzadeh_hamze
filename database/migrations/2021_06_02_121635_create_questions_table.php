@@ -21,10 +21,13 @@ class CreateQuestionsTable extends Migration
             $table->text('answer3');
             $table->text('answer4');
             $table->integer('real_answer');
-            $table->unsignedBigInteger('contest_id');
+            $table->integer('is_quiz')->default(0);
 
+            $table->unsignedBigInteger('contest_id')->nullable();
 
             $table->foreign('contest_id')->references('id')->on('contests')->onDelete('cascade')->onUpdate('cascade');
+
+
             $table->timestamps();
         });
     }

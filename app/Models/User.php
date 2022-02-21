@@ -65,6 +65,33 @@ class User extends Authenticatable
         return $this->belongsToMany(Contest::class,'user_contest', 'user_id' , 'contest_id');
     }
 
+    public function courses(){
+        return $this->belongsToMany(Course::class,'user_course', 'user_id' , 'course_id')->wherePivot('role', 'STD');
+    }
+    public function teachingCourses(){
+        return $this->belongsToMany(Course::class,'user_course', 'user_id' , 'course_id')->wherePivot('role', 'TCH');
+    }
+
+
+    public function quizzes()
+    {
+        return $this->belongsToMany(Quiz::class, 'user_quiz', 'user_id', 'quiz_id')->wherePivot('role', 'STD');
+    }
+
+    public function createdQuizzes()
+    {
+        return $this->belongsToMany(Quiz::class, 'user_quiz', 'user_id', 'quiz_id')->wherePivot('role', 'TCH');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function lessons(){
+        return $this->belongsToMany(User::class,'user_lesson', 'user_id' , 'lesson_id');
+    }
+
     public function twoFactorCode()
     {
         return $this->hasOne(TwofactorCode::class);

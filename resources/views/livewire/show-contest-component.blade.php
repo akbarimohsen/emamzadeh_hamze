@@ -24,7 +24,7 @@
                                 <div class="wdgt-box">
                                     <h4>آخرین مسابقات</h4>
                                     <div class="rcnt-wrp">
-                                        @foreach ($last_contests as $c )
+                                        @foreach ($last_contests as $c)
                                             <div class="rcnt-bx">
                                                 <a href="{{ route('showContest' , ['contest_id' => $c->id]) }}" title=""><img src={{ asset("assets/images/contests/$c->image") }} width="60px" height="20px" alt="rcnt-img1.jpg"></a>
                                                 <div class="rcnt-inf">

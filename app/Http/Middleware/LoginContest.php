@@ -22,8 +22,6 @@ class LoginContest
         $contest_id = intval($request->route('contest_id'));
         $exist = $user->contests->where('id',"=",$contest_id)->first();
 
-        dd($exist);
-
         if($exist != null)
         {
             session()->flash('middleware_message', 'شما قبلا یک بار وارد آزمون شده اید.');
@@ -32,7 +30,6 @@ class LoginContest
         else
         {
             return $next($request);
-
         }
     }
 }

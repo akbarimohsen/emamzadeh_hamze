@@ -83,6 +83,18 @@
             <span class="nav-link-text">کاربران</span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
+            <a class="nav-link" href="{{ route('admin.addCourse') }}">
+              <i class="fa fa-fw fa-heart"></i>
+              <span class="nav-link-text">افزودن دوره</span>
+            </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
+            <a class="nav-link" href="{{ route('admin.showCourses') }}">
+              <i class="fa fa-fw fa-heart"></i>
+              <span class="nav-link-text">نمایش دوره ها </span>
+            </a>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Adding">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseAdding" data-parent="#exampleAccordion">
               <i class="fa fa-fw fa-plus-circle"></i>

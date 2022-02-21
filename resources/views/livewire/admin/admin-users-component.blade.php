@@ -12,7 +12,7 @@
           <div class="card-header">
             <i class="fa fa-table"></i> جداول کاربران</div>
           <div class="card-body">
-            @if (Session::has('message'))
+            @if(Session::has('message'))
                 <div class="row">
                     <div class="alert alert-success col-md-12">
                         <?php echo session('message') ?>
@@ -29,26 +29,41 @@
                     <th>نام کاربری</th>
                     <th>شماره موبایل</th>
                     <th>وضعیت تاییده</th>
+                    <th>نقش</th>
+                    <th>تغییر نقش</th>
                   </tr>
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
                         <tr>
                             <td>{{ $user->id }}</td>
-                            <td> {{ $user->first_name }} </td>
+                            <td>{{ $user->first_name }} </td>
                             <td>
                                 {{ $user->last_name }}
                             </td>
                             <td>
-                               {{ $user->name }}
+                                {{ $user->name }}
                             </td>
                             <td>{{ $user->phone }}</td>
                             <td>
-                                @if ($user->is_confirm == 0)
+                                @if($user->is_confirm == 0)
                                     خیر
                                 @else
                                     بله
                                 @endif
+                            </td>
+                            <td>
+                                @if($user->utype == "USR")
+                                    دانش آموز
+                                @elseif($user->utype == "ADM")
+                                    ادمین
+                                @elseif($user->utype == "TCH")
+                                    معلم
+                                @endif
+                            </td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" wire:click="changeRole('USR', {{ $user->id }})" >ٔدانش آموز</button>
+                                <button class="btn btn-info btn-sm" wire:click="changeRole('TCH',{{ $user->id }} )">معلم</button>
                             </td>
                         </tr>
                     @endforeach

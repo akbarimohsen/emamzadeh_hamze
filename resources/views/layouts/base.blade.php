@@ -60,7 +60,7 @@
                                 @if(Auth::user()->utype === 'ADM')
                                     <a class="thm-btn brd-rd5" href="{{ route('admin.dashboard') }}" title="">{{ Auth::user()->name }}</a>
                                     <a class="thm-btn brd-rd5" style="background-color:tomato; margin-left:5px;" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="">خروج</a>
-                                @elseif(Auth::user()->utype === 'USR')
+                                @elseif(Auth::user()->utype === 'USR' || Auth::user()->utype === 'TCH')
                                     <a class="thm-btn brd-rd5" href="{{ route('user.dashboard') }}" title="">{{ Auth::user()->name }}</a>
                                     <a class="thm-btn brd-rd5" style="background-color:tomato; margin-left:5px;" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="">خروج</a>
                                 @endif
@@ -78,7 +78,7 @@
 
                             <li><a href="{{ route('events') }}" title="">رویداد ها</a></li>
                             <li><a href="{{ route('contests') }}" title="">مسابقات </a></li>
-                            <li><a href="{{ route('contests') }}" title="">آموزش مجازی </a></li>
+                            <li><a href="{{ route('education.home') }}" title="">آموزش مجازی </a></li>
 
                             <li><a href="{{ route('books') }}" title="">کتاب ها </a></li>
 
@@ -111,7 +111,7 @@
                         @if(Auth::user()->utype === 'ADM')
                             <a class="btn btn-success" href="{{ route('admin.dashboard') }}" title="">{{ Auth::user()->name }}</a>
                             <a class="btn btn-danger" style="background-color:tomato; margin-left:5px;" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="">خروج</a>
-                        @elseif(Auth::user()->utype === 'USR')
+                        @elseif(Auth::user()->utype === 'USR' || Auth::user()->utype === 'TCH')
                             <a class="btn btn-success" href="{{ route('user.dashboard') }}" title="">{{ Auth::user()->name }}</a>
                             <a class="btn btn-danger" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="">خروج</a>
                         @endif

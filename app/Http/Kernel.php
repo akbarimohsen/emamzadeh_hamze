@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\LessonLogin;
+use App\Http\Middleware\TeacherAuth;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -53,6 +55,9 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'QuizLogin' => \App\Http\Middleware\LoginQuiz::class,
+        'LessonLogin' => \App\Http\Middleware\LessonLogin::class,
+        'TeacherAuth' => \App\Http\Middleware\TeacherAuth::class,
         'LoginContest' => \App\Http\Middleware\LoginContest::class,
         'adminAuth' => \App\Http\Middleware\adminAuth::class,
         'auth' => \App\Http\Middleware\Authenticate::class,

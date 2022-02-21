@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
+
     use HasFactory;
 
     protected $fillable = ['iframe','name','description', 'is_speech', 'day_of_speech'];

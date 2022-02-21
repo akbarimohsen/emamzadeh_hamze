@@ -2,17 +2,13 @@
     <div class="container">
 		<div class="main-body">
 			<div class="row">
-				<div class="col-lg-4 mt-2">
+				{{-- <div class="col-lg-4 mt-2">
 					<div class="card">
 						<div class="card-body">
 							<div class="d-flex flex-column align-items-center text-center">
 								<img src="{{ asset('assets/images/user_icon.png') }}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
 								<div class="mt-3">
 									<h4>{{ $user->first_name }} {{ $user->last_name }}</h4>
-									{{-- <p class="text-secondary mb-1">Full Stack Developer</p>
-									<p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-									<button class="btn btn-primary">Follow</button>
-									<button class="btn btn-outline-primary">Message</button> --}}
 								</div>
 							</div>
 							<hr class="my-4">
@@ -24,7 +20,8 @@
                             </div>
 						</div>
 					</div>
-				</div>
+				</div> --}}
+                @livewire('user.dashboard-sidebar-component',[ 'user' => $user , 'active_number' => 0 ])
 				<div class="col-lg-8">
 					<div class="card">
 						<div class="card-body">
