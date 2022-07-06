@@ -38,7 +38,7 @@ class CourseSidebarComponent extends Component
     public function addCart($course_id)
     {
         if (!auth()->check()) {
-            session()->flash('AuthMessage', 'ابتدا وارد حساب کاربری خود شوید !!!');
+            return redirect()->route('login');
         } else {
             $user = Auth::user();
             if( $user->id == $this->course->teacher->id ){

@@ -40,6 +40,7 @@ class AdminAddContentComponent extends Component
         }else{
             $dest_path = public_path('/assets/images/contents');
         }
+
         $data['user_id'] = Auth::user()->id;
         // $data['image'] = $this->image->store('contents_images','public');
         $img_name = time() . '.' . $this->image->extension();

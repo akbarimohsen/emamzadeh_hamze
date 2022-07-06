@@ -79,6 +79,7 @@
                             <li><a href="{{ route('events') }}" title="">رویداد ها</a></li>
                             <li><a href="{{ route('contests') }}" title="">مسابقات </a></li>
                             <li><a href="{{ route('education.home') }}" title="">آموزش مجازی </a></li>
+                            <li><a href="{{ route('quranMemorization') }}">حفظ موضوعی قرآن</a></li>
 
                             <li><a href="{{ route('books') }}" title="">کتاب ها </a></li>
 
@@ -135,18 +136,7 @@
 
                             <li><a href="{{ route('about-us') }}" title="">درباره ما</a></li>
                             <li><a href="{{ route('contact-us') }}" title="">تماس با ما</a></li>
-							 {{-- <li class="menu-item-has-children"><a href="index.html#" title="">منو</a>
-                                <ul>
-                                    <li><a href="index.html" title="">منو اصلی 1</a></li>
-                                    <li><a href="index2.html" title="">منوی اصلی 2</a></li>
-                                    <li class="menu-item-has-children"><a href="index.html#" title="">منوی اصلی 3</a>
-                                        <ul>
-                                            <li><a href="index.html" title="">زیرمنوی 1</a></li>
-                                            <li><a href="index2.html" title="">زیر منوی 2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li> --}}
+							
                         </ul>
             </div><!-- Responsive Menu -->
         </div><!-- Responsive Header -->

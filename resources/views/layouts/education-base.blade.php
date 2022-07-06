@@ -65,61 +65,36 @@
 		<div class="container margin_120_95">
 			<div class="row">
 				<div class="col-lg-5 col-md-12 p-r-5">
-					<p><img src={{ asset("assets/education/img/logo.png") }} width="149" height="42" data-retina="true" alt=""></p>
-					<p>ملت وب ایپسوم متن ساختگی با تولید سادگی ملت وب از صنعت چاپ و با ملت وب از ملت وب گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-					<div class="follow_us">
-						<ul>
-							<li>مارا دنبال کنید</li>
-							<li><a href="#0"><i class="ti-facebook"></i></a></li>
-							<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
-							<li><a href="#0"><i class="ti-google"></i></a></li>
-							<li><a href="#0"><i class="ti-pinterest"></i></a></li>
-							<li><a href="#0"><i class="ti-instagram"></i></a></li>
-						</ul>
-					</div>
+					<p><img src={{ asset("assets/images/logo3.png") }} width="70" height="70" data-retina="true" alt=""></p>
+					<p>ما خادمین امامزاده حمزه (ع) در راستای بهبود و رفع مشکلات فرهنگی جامعه قدم بر میداریم. امیدواریم که با کمک شما
+                        بتوانیم این اهداف را به انجام برسانیم.
+                    </p>
 				</div>
 				<div class="col-lg-3 col-md-6 ml-lg-auto">
 					<h5>لینک های مفید</h5>
 					<ul class="links">
-						<li><a href="#0">پذیرش</a></li>
-						<li><a href="#0">درباره</a></li>
-						<li><a href="#0">ورود</a></li>
-						<li><a href="#0">ثبت نام</a></li>
-						<li><a href="#0">اخبار و رویداد</a></li>
-						<li><a href="#0">تماس</a></li>
+
+                            <li><a href="{{ route('ofogh') }}" title="">مرکز افق</a></li>
+                            <li><a href="{{ route('quranAndHadis') }}" title="">قرآن و حدیث</a></li>
+                            <li><a href="{{ route('pictures') }}" title="">عکس ها</a></li>
+                            <li><a href="{{ route('videos') }}" title="">ویدیو ها</a></li>
+                            <li><a href="{{ route('education.home') }}" title="">واحد آموزش مجازی</a></li>
+
 					</ul>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<h5>تماس با ما</h5>
 					<ul class="contacts">
-						<li><a href="tel_3a//61280932400"><i class="ti-mobile"></i> + 61 23 8093 3400</a></li>
-						<li><a href="mailto:info@udema.com"><i class="ti-email"></i> info@udema.com</a></li>
+						<li><a href="tel_3a//61280932400"><i class="ti-mobile"></i> 0921 044 71 07</a></li>
+						<li><a href="mailto:info@udema.com"><i class="ti-email"></i>mohsen.akbari451@gmail.com</a></li>
 					</ul>
 					<div id="newsletter">
 					<h6>خبرنامه</h6>
 					<div id="message-newsletter"></div>
-					<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
-						<div class="form-group">
-							<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="ایمیل شما">
-							<input type="submit" value="ارسال" id="submit-newsletter">
-						</div>
-					</form>
 					</div>
 				</div>
 			</div>
 			<!--/row-->
-			<hr>
-			<div class="row">
-				<div class="col-md-8">
-					<ul id="additional_links">
-						<li><a href="#0">قوانین و مقررات</a></li>
-						<li><a href="#0">حریم خصوصی</a></li>
-					</ul>
-				</div>
-				<div class="col-md-4">
-					<div id="copy">© ترجمه و بازبینی توسط ملت وب</div>
-				</div>
-			</div>
 		</div>
 	</footer>
 	<!--/footer-->

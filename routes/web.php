@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SubmitFormsController;
 use App\Http\Livewire\AboutUsComponent;
 use App\Http\Livewire\Admin\AddCourseComponent;
 use App\Http\Livewire\Admin\AddPictureComponent;
@@ -12,6 +13,7 @@ use App\Http\Livewire\Admin\AdminAddEventComponent;
 use App\Http\Livewire\Admin\AdminAddHekmatComponent;
 use App\Http\Livewire\Admin\AdminAddNewComponent;
 use App\Http\Livewire\Admin\AdminAddQuestionComponent;
+use App\Http\Livewire\Admin\AdminAddQuranComponent;
 use App\Http\Livewire\Admin\AdminAddVideoComponent;
 use App\Http\Livewire\Admin\AdminCommentsComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
@@ -51,6 +53,7 @@ use App\Http\Livewire\OfoghComponent;
 use App\Http\Livewire\OfoghContentComponent;
 use App\Http\Livewire\PicturesComponent;
 use App\Http\Livewire\QuranAndHadisComponent;
+use App\Http\Livewire\QuranMemorizationComponent;
 use App\Http\Livewire\ScoreboardComponent;
 use App\Http\Livewire\ShowContestComponent;
 use App\Http\Livewire\SpeechesShowComponent;
@@ -99,6 +102,7 @@ Route::get('/FarhangServices', FahangServicesComponent::class)->name('farhangSer
 Route::get('/ConstructionNave', ConstructionNaveComponent::class)->name('constructionNave');
 Route::get("/News/{id}", NewsComponent::class)->name('news');
 Route::get("/books",BooksComponent::class)->name('books');
+Route::get("/QuranMemorization", QuranMemorizationComponent::class )->name('quranMemorization');
 
 # education routes
 Route::get('/education/error404', Error404Component::class)->name('education.error404');
@@ -140,6 +144,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/order/{id}/pay', Cart2Component::class)->name('user.order.pay');
     Route::get('/user/order/{id}/end', Cart3Component::class)->name('user.order.end');
     Route::post('/user/order/{id}/purchase', [PaymentController::class , 'purchase'])->name('user.order.purchase');
+    Route::get('/user/order/{id}/verify',[ PaymentController::class , 'verify' ])->name('user.order.verify');
 });
 
 // Teacher Routes
@@ -147,7 +152,8 @@ Route::middleware(['auth:sanctum', 'verified','TeacherAuth'])->group(function(){
 
     Route::get('/teacher/{id}/courses', TeacherShowCoursesComponent::class )->name('teacher.courses');
     Route::get('/education/courses/{id}/addHeading', AddHeadingComponent::class)->name('education.addHeading');
-    Route::get('/education/courses/{id1}/heading/{id2}/addLesson', AddLessonComponent::class)->name('education.addCourse');
+    Route::get('/education/courses/{id1}/heading/{id2}/addLesson', AddLessonComponent::class)->name('education.addLesson');
+    Route::post('/education/courses/{id1}/heading/{id2}/postLesson', [SubmitFormsController::class, 'submitLesson' ])->name('education.postLesson');
     Route::get('/education/courses/{id1}/heading/{id2}/editHeading', EditHeadingComponent::class)->name('education.editHeading');
     Route::get('/education/courses/{id1}/heading/{id2}/addQuiz', AddQuizComponent::class)->name('education.addQuiz');
     Route::get('/education/courses/{id1}/heading/{id2}/quiz/{id3}/addQuestion', AddQuestionComponent::class)->name('quiz.addquestion');
@@ -178,7 +184,7 @@ Route::middleware(['auth:sanctum', 'verified' ,'adminAuth'])->group(function(){
     Route::get('/admin/users',AdminUsersComponent::class)->name('admin.showUsers');
     Route::get('/admin/addCourses',AddCourseComponent::class)->name('admin.addCourse');
     Route::get("/admin/showCourses", ShowCoursesComponent::class)->name('admin.showCourses');
-
+    Route::get("/admin/addQuran", AdminAddQuranComponent::class)->name('admin.addQuran');
 });
 
 // enter Contest Route

@@ -60,6 +60,11 @@
 						</div>
 					</aside>
 					<div class="col-lg-8">
+                        @if( Session::get("FaildPaymentMessage") )
+                            <div class="alert alert-danger">
+                                {{ Session::get("FaildPaymentMessage") }}
+                            </div>
+                        @endif
 						<div class="box_cart">
                             <table class="table table-striped">
                                 <thead>

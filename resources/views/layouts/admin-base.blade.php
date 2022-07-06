@@ -111,6 +111,9 @@
                   <a href="{{ route('admin.addCategory') }}">دسته جدید</a>
               </li>
               <li>
+                  <a href="{{ route('admin.addQuran') }}"> آیه یا دسته قرآن </a>
+              </li>
+              <li>
                   <a href="{{ route('admin.addEvent') }}">رویداد جدید</a>
               </li>
               <li>

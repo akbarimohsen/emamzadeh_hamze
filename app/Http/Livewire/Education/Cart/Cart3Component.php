@@ -14,7 +14,6 @@ class Cart3Component extends Component
         $this->order = Order::find($id);
     }
 
-
     public function render()
     {
         return view('livewire.education.cart.cart3-component')->layout('layouts.education-base');

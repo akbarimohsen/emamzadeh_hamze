@@ -83,7 +83,7 @@
                 <div class="price">
                     {{ $course->price }} تومان
                 </div>
-                <a href="#" class="btn_1 full-width" wire:click="addCart({{$course->id}})">افزودن به سبد خرید</a>
+                <button class="btn_1 full-width" wire:click="addCart({{$course->id}})">افزودن به سبد خرید</button>
             @endauth
             <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center font-weight-bold">

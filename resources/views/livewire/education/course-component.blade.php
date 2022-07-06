@@ -3,7 +3,7 @@
 		<section id="hero_in" class="courses">
 			<div class="wrapper">
 				<div class="container">
-					<h1 class="fadeInUp"><span></span>دوره {{ $course->title }}</h1>
+					<h1 class="fadeInUp"><span></span>{{ $course->title }}</h1>
 				</div>
 			</div>
 		</section>
@@ -38,31 +38,6 @@
                                 <span class="alert alert-success"> {{ Session::get('message') }}</span>
                             </div>
                         @endif
-                        @if(Session::has('AuthMessage'))
-                            <script>
-                                let timerInterval
-                                    Swal.fire({
-                                    icon: 'error',
-                                    title: 'عدم ورود به حساب کاربری',
-                                    html: 'تا لحظاتی دیگر به صفحه ورود منتقل خواهید شد.',
-                                    timer: 3000,
-                                    timerProgressBar: true,
-                                    didOpen: () => {
-                                        Swal.showLoading()
-                                        const b = Swal.getHtmlContainer().querySelector('b')
-                                        timerInterval = setInterval(() => {
-                                        b.textContent = Swal.getTimerLeft()
-                                        }, 100)
-                                    },
-                                    willClose: () => {
-                                        clearInterval(timerInterval)
-                                    }
-                                    }).then((result) => {
-                                    /* Read more about handling dismissals below */
-                                    window.location = " {{ route('login') }} ";
-                                    })
-                        </script>
-                        @endif
 
                         @if(Session::has('sendCommentMessage'))
                             <script>
@@ -72,43 +47,6 @@
                                 text: '{{ Session::get("sendCommentMessage") }}'
                             }).then( (result) => {
                                 window.location = " {{ route('education.showcourse' , ['id' => $course->id ]) }} "
-                            })
-                            </script>
-                        @endif
-
-                        @if(Session::has('addCartMessage'))
-                            <script>
-                                let timerInterval
-                                    Swal.fire({
-                                    icon: 'success',
-                                    title: 'دوره به سبد خرید شما اضافه گردید.',
-                                    html: 'تا لحظاتی دیگر به صفحه سبد خرید منتقل خواهید شد.',
-                                    timer: 3000,
-                                    timerProgressBar: true,
-                                    didOpen: () => {
-                                        Swal.showLoading()
-                                        const b = Swal.getHtmlContainer().querySelector('b')
-                                        timerInterval = setInterval(() => {
-                                        b.textContent = Swal.getTimerLeft()
-                                        }, 100)
-                                    },
-                                    willClose: () => {
-                                        clearInterval(timerInterval)
-                                    }
-                                    }).then((result) => {
-                                    /* Read more about handling dismissals below */
-                                    window.location = " {{ route('user.order.cart', ['id' => $order->id ]) }} "
-                                    })
-                            </script>
-                        @endif
-                        @if(Session::has("orderExist"))
-                            <script>
-                                Swal.fire({
-                                icon: 'error',
-                                title: 'دوره تکراری',
-                                text: '{{ Session::get("orderExist") }}'
-                            }).then( (result) => {
-                                window.location = " {{ route('user.order.cart', ['id' => $order->id ]) }} "
                             })
                             </script>
                         @endif
@@ -226,7 +164,7 @@
                                                 </div>
                                                 <div class="row mt-5">
                                                     @can('update', $course )
-                                                        <a href="{{ route('education.addCourse', ['id1' => $course->id , 'id2' => $heading->id ]) }}" class="btn btn-primary btn-sm mr-1 mt-2">افزودن ویدیو جدید</a>
+                                                        <a href="{{ route('education.addLesson', ['id1' => $course->id, 'id2' => $heading->id]) }}" class="btn btn-primary btn-sm mr-1 mt-2">افزودن ویدیو جدید</a>
                                                     @endcan
 
                                                     @can('update', $course )
